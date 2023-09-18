@@ -1,0 +1,65 @@
+/* Common styles for all screen sizes */
+.event {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.event img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styles for screens with a maximum width of 600px (typical mobile devices) */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .event {
+        padding: 5px;
+    }
+}
+
+.fa {
+    padding: 5px;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 1px 1px;
+    border-radius: 10%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.mySlides {
+    display: none;
+}
