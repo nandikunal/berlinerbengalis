@@ -1,2 +1,13 @@
 User-agent: *
-Disallow:
+# Block sensitive or admin pages
+# Disallow: /wp-admin/
+# Disallow: /cgi-bin/
+# Disallow: /wp-login.php
+# Disallow: /search/
+
+# Allow important content and resources
+# Allow: /wp-content/uploads/
+# Allow: /wp-content/themes/
+
+# Specify the location of the sitemap
+Sitemap: https://berlinerbengalis.com/sitemap.xml
