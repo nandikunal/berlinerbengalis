@@ -51,6 +51,7 @@
   <link rel="stylesheet" href="/template/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/template/menu.css">
+  <link rel="stylesheet" href="/template/slide.css">
 
   <!-- GateKeeper script beginning -->
   <!-- Privacy Settings -->
@@ -109,30 +110,29 @@
     <img class="w3-image" src="/images/home-logo.png" alt="Berliner Bengalis e.V." style="border-radius:2%;">
   </header>
   <!-- Caption -->
-  <h1>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-    <style>
-      .w3-tangerine {
-        font-family: 'Tangerine';
-        font-size: larger;
-        font-weight: bolder;
-      }
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <style>
+    .w3-tangerine {
+      font-family: 'Tangerine';
+      font-size: large;
+      font-weight: bolder;
+    }
 
-      .w3-tangerine-serif {
-        font-family: serif;
-        font-size: larger;
-        font-weight: bolder;
-      }
-    </style>
-    <p class="w3-display-container w3-content w3-center w3-tangerine-serif">
-      Berliner Bengalis e.V. celebrating Durga Puja 2024 from October 8th to October 12th, at
-      <a href="https://maps.app.goo.gl/Sj6SnLVQaH2NpN2j6" target="_blank" class="w3-hover-text-green w3-tangerine">
-        <br>Zwölf-Apostel-Kirchengemeinde, 
-        <br>An d. Apostelkirche 1, 10783 Berlin</a>
-        <br><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4857.619638058624!2d13.35869!3d52.50068209999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8504bf39de045%3A0xb61a35a31d7baaec!2sZw%C3%B6lf-Apostel-Kirchengemeinde!5e0!3m2!1sen!2sde!4v1725899216113!5m2!1sen!2sde" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <br><p class="w3-display-container w3-content w3-center w3-tangerine">We warmly invite you to join us in the sacred celebration of Durga Puja. Let the divine blessings of Goddess Durga surround you, and may our pandal feel like a home away from home. Come, let’s unite in devotion, togetherness, and the cherished traditions that connect us all.</p>
-    </p>    
-  </h1>
+    .w3-tangerine-serif {
+      font-family: serif;
+      font-size: large;
+      font-weight: bolder;
+    }
+  </style>
+  <h3 class="w3-display-container w3-content w3-center">
+    Berliner Bengalis e.V. celebrating Durga Puja 2024 from October 8th to October 12th, at
+    <a href="https://maps.app.goo.gl/Sj6SnLVQaH2NpN2j6" target="_blank" class="w3-hover-text-green">
+      <br>Zwölf-Apostel-Kirchengemeinde, 
+      <br>An d. Apostelkirche 1, 10783 Berlin</a>
+      <br><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4857.619638058624!2d13.35869!3d52.50068209999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8504bf39de045%3A0xb61a35a31d7baaec!2sZw%C3%B6lf-Apostel-Kirchengemeinde!5e0!3m2!1sen!2sde!4v1725899216113!5m2!1sen!2sde" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <br><p class="w3-display-container w3-content w3-center w3-tangerine-serif">We warmly invite you to join us in the sacred celebration of Durga Puja. Let the divine blessings of Goddess Durga surround you, and may our pandal feel like a home away from home. Come, let’s unite in devotion, togetherness, and the cherished traditions that connect us all.</p>
+  </h3>
   <!-- Page content -->
   <div class="w3-content" style="max-width:1564px">
     <div class="w3-row-padding" display="inline-block">
@@ -152,12 +152,9 @@
           <div class="w3-display-container mySlides">
             <img src="/images/2024-invite/2024-invite-1.jpeg" style="width:100%">
           </div>
-          <br>
-          <br>
-          <br>
-          <br>
-          <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
-          <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+          <!-- Next and previous buttons -->
+          <a class="prev w3-button" onclick="plusDivs(-1)">&#10094;</a>
+          <a class="next w3-button" onclick="plusDivs(1)">&#10095;</a>
 
         </div>
 
