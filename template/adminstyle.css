@@ -1,0 +1,160 @@
+/* Mobile-friendly styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #E6F1F5, #FFFFFF); /* Soft gradient from light gray-blue to white */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #333; /* Dark gray text for better contrast */
+}
+
+h1 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+video {
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#output {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #05d4f4;
+    border-radius: 10px;
+    border-color: #000000;
+    max-width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the input box */
+input[type="number"] {
+    padding: 8px;
+    font-size: 20px; /* Set font size to 20px */
+    font-weight: bold;
+    text-align: center;
+    width: 150px;
+    border: 2px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding and width don't overflow */
+    transition: border-color 0.3s ease; /* Smooth transition on focus */
+}
+
+/* Change border color when input is focused */
+input[type="number"]:focus {
+    border-color: #4CAF50; /* Green border when focused */
+    outline: none; /* Remove default outline */
+}
+
+canvas {
+    display: none; /* Hide canvas */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+/* Style for the refresh button */
+.refresh-button {
+    background-color: #4af324; /* Light gray background */
+    border: none; /* No border */
+    border-radius: 50%; /* Circular shape */
+    padding: 15px; /* Some padding for size */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+/* Change background on hover */
+.refresh-button:hover {
+    background-color: #e0e0e0; /* Slightly darker gray on hover */
+}
+
+/* Icon size */
+.refresh-button i {
+    font-size: 18px; /* Icon size */
+}
+
+/* Apply press effect when active */
+.refresh-button:active {
+    background-color: rgb(211, 167, 167); /* Even darker red */
+    transform: scale(0.98); /* Slightly shrink the button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+}
+
+/* Container for aligning button and text */
+.container {
+    display: flex; /* Flex container */
+    align-items: center; /* Vertical alignment */
+    gap: 10px; /* Space between button and text */
+}
+
+.checkin-button {
+    padding: 12px 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    /* border: 2px solid #1f1f1f; /* Dark Gray Border */
+    border: none; /* No border */
+    background-color: #cdf9b4; /* Light Blue for background */
+    color: #1f1f1f; /* Dark Gray for Text */
+    cursor: pointer;
+    transition: all 0.2s ease; /* Smooth transition effect */
+}
+
+/* Change background and scale slightly when hovering */
+.checkin-button:hover {
+    background-color: #FAD02E; /* Soft Yellow on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Apply press effect when active */
+.checkin-button:active {
+    background-color: #FC997C; /* Warm Coral Red for active press */
+    transform: scale(0.98); /* Slightly shrink the button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+}
+
+.checkout-button {
+    padding: 12px 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    /* border: 2px solid #1f1f1f; /* Dark Gray Border */
+    border: none; /* No border */
+    background-color: #fec6c6; /* Light Blue for background */
+    color: #1f1f1f; /* Dark Gray for Text */
+    cursor: pointer;
+    transition: all 0.2s ease; /* Smooth transition effect */
+}
+
+/* Change background and scale slightly when hovering */
+.checkout-button:hover {
+    background-color: #FAD02E; /* Soft Yellow on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Apply press effect when active */
+.checkout-button:active {
+    background-color: #FC997C; /* Warm Coral Red for active press */
+    transform: scale(0.98); /* Slightly shrink the button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+}

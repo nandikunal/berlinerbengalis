@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+        }
+
+        .dashboard-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Welcome to the Admin Dashboard</h1>
+        <p><span id="adminUser"></span> you are now logged in.</p>
+        <a href="/2024-durga-puja-admin/checkin.html" style="font-size: 24px;">Checkin</a>
+        &nbsp;&nbsp;
+        <a href="/2024-durga-puja-admin/checkout.html" style="font-size: 24px;">Checkout</a>
+    </div>
+
+    <script>
+        // Function to update the status text based on authentication
+        function updateAuthStatus() {
+            // Prevent access to this page if not authenticated
+            const isAuthenticated = localStorage.getItem('isAuthenticated');
+
+            if (isAuthenticated !== 'true') {
+                window.location.href = '/'; // Redirect to login if not authenticated
+            }
+            
+            const adminEmail = localStorage.getItem('adminEmailAddress');
+            const adminUserText = document.getElementById('adminUser');
+
+            // Check if the value exists and is true
+            if (isAuthenticated === 'true') {
+                adminUserText.innerText = adminEmail;
+            } else {
+                adminUserText.innerText = 'ERROR';
+            }
+        }
+
+        // Call the function on page load
+        window.onload = updateAuthStatus;
+    </script>
+</body>
+</html>
