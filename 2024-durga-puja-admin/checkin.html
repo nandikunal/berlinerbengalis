@@ -12,14 +12,20 @@
     <!-- Refresh button with icon -->
     <div class="container">
         <button class="refresh-button" onclick="fetchVisitorCount()"><i class="fas fa-sync-alt"></i></button>
-        <h2 id="visitor">Total visitors Inside: <span id="visitorCount"></span></h2>
+        <h2 id="visitor">Total visitors Inside: <span id="visitorTotal"></span></h2>
+        <p id="errorTotalVisitors" class="error-message"></p>
     </div>
     <video id="video" autoplay playsinline></video>
     <canvas id="canvas"></canvas>
     <p id="output"><input type="number" id="outputData" min="0" step="1"/>
-        <button id="sendButton" disabled onclick="sendQRCode()" class="checkin-button"><b>Checkin</b></button>
+        <button id="sendButton" onclick="sendQRCode()" class="checkin-button"><b>Checkin</b></button>
     </p>
-    <div id="apiResponse"></div>
+
+    <div class="visitor-container">
+        <p id="visitorName" class="visitor-info"></p>
+        <p id="visitorEmail" class="visitor-info"></p>
+        <p id="visitorCount" class="visitor-info"></p>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
     <script src="/js/script.js"></script>
@@ -34,13 +40,14 @@
             window.location.href = '/'; // Redirect to login if not authenticated
         }
 
-        const qrCodeData = document.getElementById('outputData').value;
-
+        const outputDataValue = document.getElementById('outputData').value;
         // Check if QR code data is available
-        if (!qrCodeData) {
+        if(!outputDataValue) {
             alert("No QR Code detected yet.");
             return;
         }
+
+        const qrCodeData = 'BB-' + outputDataValue;
 
         try {
             // Make the API call to check-in with the QR code data
@@ -52,8 +59,13 @@
                 body: JSON.stringify({ code: qrCodeData }) // Send the QR code data
             });
 
+            if(response.status >= 400) {
+                const data = await response.json();
+                alert(data.error_message);
+                return;
+            }
             // Check if the response is successful (status 200-299)
-            if (!response.ok) {
+            else if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
@@ -64,8 +76,10 @@
             console.log("CIN-sendQRCode:registration : " + data.registration);
 
             // Update the UI with the response from the API
-            document.getElementById('visitorCount').innerText = JSON.stringify(data.totalCount, null, 2);
-            document.getElementById('apiResponse').innerText = `Number of visitors: ${data.customer}`;
+            document.getElementById('visitorTotal').innerText = JSON.stringify(data.totalCount, null, 2);
+            document.getElementById('visitorName').innerText = `${data.customer.first_name} ${data.customer.last_name}`;
+            document.getElementById('visitorEmail').innerText = `${data.customer.email}`;
+            document.getElementById('visitorCount').innerText = `Adults - ${data.registration.adults}, Children - ${data.registration.children}`;
         } catch (error) {
             // Log any errors and alert the user
             console.error('Error during the API request:', error);
@@ -75,15 +89,18 @@
 
     async function fetchVisitorCount() {
         try {
-            const response = await fetch('https://berliner-bengalis-be.onrender.com/api/total-registration'); 
+            const response = await fetch('https://berliner-bengalis-be.onrender.com/api/total-registration');
+            const errorMessage = document.getElementById('errorTotalVisitors');
+
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
             const data = await response.json();
             console.log("fetchVisitorCount:total count : " + data.totalCount); // Handle the fetched data
-            document.getElementById('visitorCount').innerText = JSON.stringify(data.totalCount, null, 2);
+            document.getElementById('visitorTotal').innerText = JSON.stringify(data.totalCount, null, 2);
         } catch (error) {
-            console.error('There was a problem with the fetch operation:', error);
+            // console.error('There was a problem with the fetch operation:', error);
+            errorMessage.innerText = 'Problem with the fetch:' + error;
         }
     }
     </script>
