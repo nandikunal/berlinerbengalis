@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>BB Checkout</title>
+    <link rel="stylesheet" href="/template/adminstyle.css">
+</head>
+<body>
+    <header id="checkin">
+        <h1>Scan QR Code to <i style="background-color: #ff0000;" >CHECKOUT</i></h1>
+    </header>
+    <video id="video" autoplay playsinline></video>
+    <canvas id="canvas"></canvas>
+    <p id="output"><input type="number" id="outputData" min="0" step="1"/>
+        <button id="sendButton" disabled onclick="sendQRCode()" class="checkout-button"><b>Checkout</b></button>
+    </p>
+    <div id="apiResponse"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+    <script src="/js/script.js"></script>
+    <script type="text/javascript">
+    // Function to handle API call when button is clicked
+    async function sendQRCode() {
+        // Prevent access to this page if not authenticated
+        const isAuthenticated = localStorage.getItem('isAuthenticated');
+
+        if (isAuthenticated !== 'true') {
+            alert('An error occurred while sending the QR code. Please try again or login as Admin');
+            window.location.href = '/'; // Redirect to login if not authenticated
+        }
+
+        const qrCodeData = document.getElementById('outputData').value;
+
+        // Check if QR code data is available
+        if (!qrCodeData) {
+            alert("No QR Code detected yet.");
+            return;
+        }
+
+        try {
+            // Make the API call to check-in with the QR code data
+            const response = await fetch('https://berliner-bengalis-be.onrender.com/api/registration/checkout', {
+                method: 'PATCH', // Assuming 'PATCH' is correct for your use case
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ code: qrCodeData }) // Send the QR code data
+            });
+
+            // Check if the response is successful (status 200-299)
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            console.log("COUT-sendQRCode:total count : " + data.totalCount);
+            console.log("COUT-sendQRCode:customer : " + data.customer);
+            console.log("COUT-sendQRCode:registration : " + data.registration);
+
+            // Update the UI with the response from the API
+            document.getElementById('apiResponse').innerText = `Number of visitors: ${data.totalCount}`;
+        } catch (error) {
+            // Log any errors and alert the user
+            console.error('Error during the API request:', error);
+            // alert('An error occurred while sending the QR code. Please try again.');
+        }
+    }
+    </script>
+
+</body>
+</html>
