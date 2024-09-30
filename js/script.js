@@ -3,16 +3,6 @@ const canvasElement = document.getElementById('canvas');
 const canvas = canvasElement.getContext('2d');
 const outputData = document.getElementById('outputData');
 
-// Update button and make it clickable once a QR code is scanned
-function updateButtonState(qrCode) {
-    const sendButton = document.getElementById('sendButton');
-    if (qrCode) {
-        sendButton.disabled = false;  // Enable the button when a QR code is detected
-    } else {
-        sendButton.disabled = true;
-    }
-}
-
 // Function to start the camera and handle QR scanning
 function startQRScanner() {
     // Check if getUserMedia is available
@@ -58,8 +48,8 @@ function scanQRCode() {
 
         if (qrCode) {
             // If a QR code is detected, output the result
-            outputData.value = qrCode.data;
-            updateButtonState(qrCode.data);  // Enable the button
+            // Removed BB- because outputData takes only Number
+            outputData.value = qrCode.data.replace("BB-", "");
 
             // Optionally draw a bounding box around the detected QR code
             canvas.beginPath();
