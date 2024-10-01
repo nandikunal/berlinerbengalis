@@ -160,7 +160,7 @@ canvas {
 }
 
 .visitor-info {
-    color: rgb(7, 7, 249);
+    color: rgba(11, 14, 21, 0.83);
     margin: 0; /* Remove the default margin */
     padding: 5px 0; /* Add some padding to space out the text slightly */
     font-size: 18px; /* Set the font size for better readability */
@@ -172,10 +172,8 @@ canvas {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5px;
-    border: 1px solid #715f5f;
     border-radius: 10px;
-    width: 100%; /* Full width */
+    width: auto; /* Full width */
     max-width: 350px; /* Maximum width for mobile-friendly design */
     margin: 0 auto; /* Center container */
 }
