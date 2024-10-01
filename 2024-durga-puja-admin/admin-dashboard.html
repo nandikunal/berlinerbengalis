@@ -33,6 +33,7 @@
 </head>
 <body>
     <div class="dashboard-container">
+        <a href="/2024-durga-puja-admin/admin-login.html" onclick="handleBackClick()">Logout</a>
         <h1>Welcome to the Admin Dashboard</h1>
         <p><b><span id="adminUser"></b></span> you are now logged in.</p>
         <a href="/2024-durga-puja-admin/checkin.html" style="font-size: 24px;">Checkin</a>
@@ -41,6 +42,11 @@
     </div>
 
     <script>
+        function handleBackClick() {
+            // Set isAuthenticated to false in localStorage
+            localStorage.setItem('isAuthenticated', 'false');
+        }
+
         // Function to update the status text based on authentication
         function updateAuthStatus() {
             // Prevent access to this page if not authenticated

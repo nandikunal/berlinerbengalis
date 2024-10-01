@@ -176,6 +176,6 @@ canvas {
     border: 1px solid #715f5f;
     border-radius: 10px;
     width: 100%; /* Full width */
-    max-width: 400px; /* Maximum width for mobile-friendly design */
+    max-width: 350px; /* Maximum width for mobile-friendly design */
     margin: 0 auto; /* Center container */
 }
