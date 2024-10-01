@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/template/adminstyle.css">
 </head>
 <body>
+    <a href="javascript:history.back()">&larr; Back</a>
     <header id="checkout">
         <h1>Scan QR Code to <i style="background-color: #ff0000;" >CHECKOUT</i></h1>
     </header>
@@ -71,6 +72,7 @@
 
             // Update the UI with the response from the API
             // document.getElementById('visitorTotal').innerText = JSON.stringify(data.totalCount, null, 2);
+            document.getElementById('outputData').value = "";
             document.getElementById('visitorName').innerText = `${data.customer.first_name} ${data.customer.last_name}`;
             document.getElementById('visitorEmail').innerText = `${data.customer.email}`;
             document.getElementById('visitorCount').innerText = `Adults - ${data.registration.adults}, Children - ${data.registration.children}`;
