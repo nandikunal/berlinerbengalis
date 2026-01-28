@@ -3,6 +3,7 @@
     margin-bottom: 20px;
     border: 1px solid #ccc;
     padding: 10px;
+    animation: slideInUp 0.5s ease-out;
 }
 
 .event img {
@@ -34,10 +35,12 @@
     text-decoration: none;
     margin: 1px 1px;
     border-radius: 10%;
+    transition: all 0.3s ease;
 }
 
 .fa:hover {
     opacity: 0.7;
+    transform: scale(1.1);
 }
 
 .fa-facebook {
@@ -62,4 +65,71 @@
 
 .mySlides {
     display: none;
+    animation: fadeIn 0.5s ease-out;
 }
+
+.mySlides.show {
+    display: block;
+}
+
+/* Navigation Animations */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Prev/Next buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    background-color: rgba(255, 153, 51, 0.7);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    border-radius: 3px;
+    user-select: none;
+    z-index: 10;
+}
+
+.next {
+    right: 0;
+}
+
+.prev {
+    left: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 153, 51, 1);
+    transform: scale(1.1);
