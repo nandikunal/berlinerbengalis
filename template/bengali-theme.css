@@ -1,0 +1,1109 @@
+/* ========================================
+   BENGALI DURGA PUJA THEME - BERLIN BENGALIS
+   Colors: Saffron (#FF9933), White (#FFFFFF), Green (#138808)
+   ======================================== */
+
+:root {
+  --saffron: #FF9933;
+  --saffron-dark: #E68A1E;
+  --white: #FFFFFF;
+  --green: #138808;
+  --green-dark: #0E5A05;
+  --gold: #FFD700;
+  --burgundy: #8B3A62;
+  --cream: #FFF8DC;
+  --dark: #1a1a1a;
+  --light-gray: #fffaf5; /* warmer, creamier base */
+  --bg-gradient: linear-gradient(180deg, var(--cream) 0%, #fffaf0 40%, #fff6e8 100%);
+}
+
+/* ========================================
+   TYPOGRAPHY - BENGALI INSPIRED
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800&family=Cinzel:wght@400;700&family=Playfair+Display:wght@700;900&display=swap');
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Baloo 2', sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+  background: var(--bg-gradient);
+  background-image: radial-gradient(circle at 12% 8%, rgba(255,217,179,0.12), transparent 18%),
+                    radial-gradient(circle at 88% 92%, rgba(19,136,8,0.02), transparent 20%),
+                    var(--bg-gradient);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, .brand, .title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  color: var(--saffron);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--saffron-dark);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 15px;
+  line-height: 1.3;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, var(--saffron), var(--green));
+  border-radius: 2px;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--green-dark);
+  line-height: 1.3;
+}
+
+/* ========================================
+   NAVIGATION BAR - PREMIUM STYLE
+   ======================================== */
+
+.navbar {
+  background: linear-gradient(135deg, var(--saffron) 0%, var(--burgundy) 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.navbar .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 900;
+  color: var(--white);
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.navbar .logo::before {
+  content: '🔱';
+  font-size: 2rem;
+}
+
+.navbar a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--white);
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* ========================================
+   HERO SECTION - GRAND OPENING
+   ======================================== */
+
+.hero {
+  /* use Maa Durga imagery with a rich red overlay */
+  background-image: linear-gradient(rgba(139,58,98,0.78), rgba(178,34,34,0.45)), url('/images/maa-durga.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero::before {
+  content: '✦ ✦ ✦';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  opacity: 0.6;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '✦ ✦ ✦';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  opacity: 0.6;
+  animation: float 3s ease-in-out infinite reverse;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: slideInDown 1s ease-out;
+}
+
+/* logo image in navbar */
+.nav-logo {
+  width: 44px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.navbar .logo span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.cta-button {
+  background: var(--white);
+  color: var(--saffron);
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  background: var(--green);
+  color: var(--white);
+}
+
+/* ========================================
+   CARDS & SECTIONS
+   ======================================== */
+
+.card {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-top: 5px solid var(--saffron);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.section {
+  padding: 5rem 2rem;
+  background: var(--light-gray);
+}
+
+.section.alternate {
+  background: var(--cream);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ========================================
+   EVENTS GRID
+   ======================================== */
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.event-card {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-top: 5px solid var(--saffron);
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.event-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--saffron), var(--green));
+}
+
+.event-content {
+  padding: 2rem;
+}
+
+.event-date {
+  color: var(--saffron);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-title {
+  font-size: 1.5rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.event-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   GALLERY - MASONRY STYLE
+   ======================================== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(139, 58, 98, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* ========================================
+   ABOUT & CONTENT SECTIONS
+   ======================================== */
+
+.content-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.content-text h3 {
+  margin-bottom: 1.5rem;
+}
+
+.content-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--saffron);
+  font-weight: 700;
+}
+
+/* ========================================
+   FOOTER - ELEGANT DESIGN
+   ======================================== */
+
+footer {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--green-dark) 100%);
+  color: var(--white);
+  padding: 3rem 2rem 1rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  color: var(--saffron);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.footer-section p, .footer-section a {
+  color: #ddd;
+  line-height: 1.8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--saffron);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.social-icons a {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--saffron);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: var(--green);
+  transform: translateY(-5px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  color: #bbb;
+}
+
+/* ========================================
+   ANIMATIONS & TRANSITIONS (Performance Optimized)
+   ======================================== */
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Smooth transitions for interactive elements */
+a, button {
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Use will-change sparingly for frequently animated elements */
+.hero {
+  will-change: background-position;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar a {
+    margin: 0 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    margin: 1rem 0;
+  }
+
+  .navbar a {
+    margin: 0 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* ========================================
+   DECORATIVE ELEMENTS
+   ======================================== */
+
+.divider {
+  height: 4px;
+  background: linear-gradient(to right, var(--saffron), var(--green));
+  margin: 2rem 0;
+  border-radius: 2px;
+}
+
+.ornament {
+  color: var(--saffron);
+  font-size: 2rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--saffron);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0.5rem;
+}
+
+.badge.green {
+  background: var(--green);
+}
+
+.badge.gold {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+/* ========================================
+   RESPONSIVE MEDIA QUERIES - OPTIMIZED
+   ======================================== */
+
+/* Tablet & Small Desktop (960px and below) */
+@media (max-width: 960px) {
+  .navbar > div {
+    flex-wrap: wrap;
+    padding: 0 1rem;
+  }
+
+  .navbar a {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .content-section {
+    padding: 2rem 1rem;
+  }
+
+  .hero-description {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  }
+
+  .events-grid,
+  .gallery-grid,
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+}
+
+/* Mobile (768px and below) - Primary Mobile Breakpoint */
+@media (max-width: 768px) {
+  /* Navigation Optimization */
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .navbar > div {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0 1rem;
+  }
+
+  .navbar a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+    text-align: center;
+    border-bottom: 1px solid rgba(255,153,51,0.1);
+  }
+
+  .navbar a:last-child {
+    border-bottom: none;
+  }
+
+  .logo span {
+    display: none;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 2.5rem 1rem;
+    min-height: 400px;
+    background-attachment: scroll; /* Better mobile performance */
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  }
+
+  .hero-description {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    margin: 1.5rem 0;
+  }
+
+  .cta-button {
+    padding: 0.75rem 1.5rem;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    width: auto;
+    min-width: 140px;
+  }
+
+  /* Typography */
+  h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+  h2 { font-size: clamp(1.3rem, 3.5vw, 1.8rem); }
+  h3 { font-size: clamp(1.1rem, 3vw, 1.4rem); }
+
+  /* Layout Grids */
+  .content-section {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .events-grid,
+  .gallery-grid,
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .event-card,
+  .card {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .event-image {
+    min-height: 200px;
+  }
+
+  .card-icon {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .divider {
+    margin: 1.5rem 0;
+    height: 3px;
+  }
+
+  .ornament {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    margin: 1rem 0;
+  }
+
+  /* Contact Section */
+  .footer-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+    scroll-padding-top: 60px; /* Account for fixed navbar */
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+
+  /* Navigation */
+  .navbar {
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.98);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .navbar > div {
+    padding: 0 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .navbar .logo {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    gap: 4px;
+  }
+
+  .navbar a {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.75rem;
+    margin: 0 2px;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 1.5rem 0.75rem;
+    min-height: 280px;
+    background-attachment: scroll;
+  }
+
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
+    margin: 0.5rem 0;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+    margin: 0.5rem 0;
+  }
+
+  .hero-description {
+    font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+    margin: 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1rem;
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    min-width: 120px;
+    margin-top: 0.75rem;
+  }
+
+  /* Typography - Responsive sizing */
+  h1 {
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    line-height: 1.6;
+  }
+
+  /* Spacing Optimization */
+  .section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .content-section {
+    padding: 1rem 0.75rem;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  /* Cards & Events */
+  .event-card,
+  .card {
+    padding: 1rem 0.75rem;
+    margin: 0.75rem 0;
+    border-radius: 10px;
+  }
+
+  .event-date {
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .event-title {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .event-description {
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .event-image {
+    min-height: 150px;
+    border-radius: 8px;
+  }
+
+  .card-icon {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  /* Badges */
+  .badge {
+    padding: 5px 10px;
+    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+    margin: 0.25rem;
+    display: inline-block;
+  }
+
+  /* Dividers & Ornaments */
+  .divider {
+    margin: 1rem 0;
+    height: 2px;
+  }
+
+  .ornament {
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+    margin: 0.75rem 0;
+  }
+
+  /* Grid Layouts */
+  .events-grid,
+  .gallery-grid,
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Gallery Items */
+  .gallery-item {
+    min-height: 180px;
+    border-radius: 8px;
+  }
+
+  /* Footer Optimization */
+  .footer {
+    padding: 1rem 0.75rem;
+  }
+
+  .footer-section {
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-section h4 {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-section p {
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .footer-bottom {
+    padding: 1rem 0.75rem;
+  }
+
+  .footer-bottom p {
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    margin: 0.5rem 0;
+  }
+
+  /* Performance: Disable scroll-behavior for smoother scrolling on mobile */
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Extra Small Mobile (320px and below) - Phones with tiny screens */
+@media (max-width: 320px) {
+  html {
+    font-size: 12px;
+    scroll-padding-top: 50px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar .logo {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    gap: 3px;
+  }
+
+  .navbar a {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.7rem;
+    margin: 0 1px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+  }
+
+  .hero-description {
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  }
+
+  h1 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
+  h2 { font-size: clamp(1rem, 2.5vw, 1.3rem); }
+  h3 { font-size: clamp(0.9rem, 2vw, 1.1rem); }
+
+  .cta-button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .ornament {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+  }
+
+  .section {
+    padding: 1rem 0.5rem;
+  }
+
+  .content-section {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .event-card,
+  .card {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+  }
+
+  .badge {
+    padding: 4px 8px;
+    font-size: 0.65rem;
+  }
+}
