@@ -203,6 +203,7 @@
         <a href="/index.html#events">Events</a>
         <a href="/pages/gallery.html">Gallery</a>
         <a href="/pages/about.html">About</a>
+        <a href="/pages/privacy.html">Privacy</a>
         <a href="mailto:info@berlinerbengalis.com" style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 25px;">Contact</a>
       </div>
     </div>
@@ -548,80 +549,202 @@
     });
   </script>
 
-  <!-- GDPR Consent Banner and Forms Script -->
-  <div id="gdprConsentBanner" class="gdpr-consent-banner" role="region" aria-label="GDPR Cookie Consent">
-    <div class="gdpr-content">
-      <p><strong>🍪 Cookie & Data Privacy Notice:</strong> We use cookies and analytics to enhance your experience. Learn more about our <a href="/pages/privacy.html#privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/pages/privacy.html#cookie-policy" target="_blank" rel="noopener">Cookie Policy</a>.</p>
-      <div class="gdpr-buttons">
-        <button id="gdprAccept" class="gdpr-btn gdpr-btn-accept">Accept All</button>
-        <button id="gdprReject" class="gdpr-btn gdpr-btn-reject">Reject</button>
-        <button id="gdprClose" class="gdpr-btn gdpr-btn-close" aria-label="Close consent banner">✕</button>
+  <!-- Google CMP - Consent Management Platform -->
+  <!-- Main Consent Banner - Simplified 2-choice design -->
+  <div id="cmpConsentBanner" class="cmp-consent-banner" role="region" aria-label="Cookie Consent Management">
+    <div class="cmp-content">
+      <div class="cmp-message">
+        <h3>🔒 Your Privacy Matters</h3>
+        <p>We use cookies and analytics to enhance your experience and serve personalized ads. By clicking "Consent," you agree to our use of cookies. Visit our <a href="/pages/privacy.html" target="_blank">Privacy Policy</a> to learn more.</p>
+      </div>
+      <div class="cmp-actions">
+        <button id="cmpManageBtn" class="cmp-btn cmp-btn-manage" aria-label="Manage cookie preferences">Manage</button>
+        <button id="cmpConsentBtn" class="cmp-btn cmp-btn-consent" aria-label="Consent to all cookies">Consent</button>
       </div>
     </div>
   </div>
 
-  <script>
-    // Initialize GDPR Consent Banner
-    function initGDPRConsent() {
-      const consentBanner = document.getElementById('gdprConsentBanner');
-      const acceptBtn = document.getElementById('gdprAccept');
-      const rejectBtn = document.getElementById('gdprReject');
-      const closeBtn = document.getElementById('gdprClose');
-      const consentKey = 'berliner-bengalis-gdpr-consent';
+  <!-- CMP Preference Center Modal -->
+  <div id="cmpOverlay" class="cmp-overlay"></div>
+  <div id="cmpModal" class="cmp-modal hidden">
+    <div class="cmp-modal-header">
+      <h2>Manage Your Preferences</h2>
+    </div>
+    <div class="cmp-modal-body">
+      <!-- Essential Cookies (Always On) -->
+      <div class="cmp-preference-group">
+        <div class="cmp-preference-header">
+          <div>
+            <div class="cmp-preference-label">Essential Cookies</div>
+            <div class="cmp-preference-desc">Required for basic site functionality. Always enabled.</div>
+          </div>
+          <button class="cmp-toggle-switch active" disabled></button>
+        </div>
+      </div>
 
-      if (localStorage.getItem(consentKey)) {
+      <!-- Analytics Cookies -->
+      <div class="cmp-preference-group">
+        <div class="cmp-preference-header">
+          <div>
+            <div class="cmp-preference-label">Analytics</div>
+            <div class="cmp-preference-desc">Help us understand how you use our site to improve your experience.</div>
+          </div>
+          <button id="cmpToggleAnalytics" class="cmp-toggle-switch" role="switch" aria-label="Toggle analytics cookies"></button>
+        </div>
+      </div>
+
+      <!-- Marketing/Ads Cookies -->
+      <div class="cmp-preference-group">
+        <div class="cmp-preference-header">
+          <div>
+            <div class="cmp-preference-label">Marketing & Advertising</div>
+            <div class="cmp-preference-desc">Allow personalized ads and marketing based on your browsing behavior.</div>
+          </div>
+          <button id="cmpToggleMarketing" class="cmp-toggle-switch" role="switch" aria-label="Toggle marketing cookies"></button>
+        </div>
+      </div>
+
+      <!-- Functional Cookies -->
+      <div class="cmp-preference-group">
+        <div class="cmp-preference-header">
+          <div>
+            <div class="cmp-preference-label">Functional Cookies</div>
+            <div class="cmp-preference-desc">Enable enhanced features and remember your preferences.</div>
+          </div>
+          <button id="cmpToggleFunctional" class="cmp-toggle-switch active" role="switch" aria-label="Toggle functional cookies"></button>
+        </div>
+      </div>
+    </div>
+    <div class="cmp-modal-footer">
+      <button id="cmpCancelBtn" class="cmp-modal-btn cmp-modal-btn-cancel">Cancel</button>
+      <button id="cmpSaveBtn" class="cmp-modal-btn cmp-modal-btn-save">Save Preferences</button>
+    </div>
+  </div>
+
+  <script>
+    // ========================================
+    // Google CMP - Consent Management Platform
+    // ========================================
+    
+    function initGoogleCMP() {
+      const consentBanner = document.getElementById('cmpConsentBanner');
+      const consentBtn = document.getElementById('cmpConsentBtn');
+      const manageBtn = document.getElementById('cmpManageBtn');
+      const overlay = document.getElementById('cmpOverlay');
+      const modal = document.getElementById('cmpModal');
+      const cancelBtn = document.getElementById('cmpCancelBtn');
+      const saveBtn = document.getElementById('cmpSaveBtn');
+      const toggleAnalytics = document.getElementById('cmpToggleAnalytics');
+      const toggleMarketing = document.getElementById('cmpToggleMarketing');
+      const toggleFunctional = document.getElementById('cmpToggleFunctional');
+      
+      const consentKey = 'google-cmp-consent';
+      
+      // Check existing consent
+      const existingConsent = localStorage.getItem(consentKey);
+      if (existingConsent) {
         consentBanner.classList.add('hidden');
+        applyConsent(JSON.parse(existingConsent));
         return;
       }
-
+      
+      // Show banner
       consentBanner.classList.remove('hidden');
-
-      acceptBtn.addEventListener('click', function() {
-        localStorage.setItem(consentKey, JSON.stringify({
+      
+      // Consent button - accept all
+      consentBtn.addEventListener('click', function() {
+        const preferences = {
+          essential: true,
           analytics: true,
-          ads: true,
+          marketing: true,
+          functional: true,
           timestamp: new Date().toISOString()
-        }));
-        consentBanner.classList.add('hidden');
-        loadGoogleAnalytics();
-      });
-
-      rejectBtn.addEventListener('click', function() {
-        localStorage.setItem(consentKey, JSON.stringify({
-          analytics: false,
-          ads: false,
-          timestamp: new Date().toISOString()
-        }));
+        };
+        localStorage.setItem(consentKey, JSON.stringify(preferences));
+        applyConsent(preferences);
         consentBanner.classList.add('hidden');
       });
-
-      closeBtn.addEventListener('click', function() {
-        localStorage.setItem(consentKey, JSON.stringify({
-          analytics: false,
-          ads: false,
+      
+      // Manage button - open modal
+      manageBtn.addEventListener('click', function() {
+        openPreferenceCenter();
+      });
+      
+      // Preference center functions
+      function openPreferenceCenter() {
+        const current = existingConsent ? JSON.parse(existingConsent) : getDefaultPreferences();
+        
+        toggleAnalytics.classList.toggle('active', current.analytics);
+        toggleMarketing.classList.toggle('active', current.marketing);
+        toggleFunctional.classList.toggle('active', current.functional);
+        
+        overlay.classList.add('active');
+        modal.classList.remove('hidden');
+      }
+      
+      function closePreferenceCenter() {
+        overlay.classList.remove('active');
+        modal.classList.add('hidden');
+      }
+      
+      // Toggle switches
+      [toggleAnalytics, toggleMarketing, toggleFunctional].forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          this.classList.toggle('active');
+        });
+      });
+      
+      // Modal buttons
+      cancelBtn.addEventListener('click', closePreferenceCenter);
+      overlay.addEventListener('click', closePreferenceCenter);
+      
+      saveBtn.addEventListener('click', function() {
+        const preferences = {
+          essential: true,
+          analytics: toggleAnalytics.classList.contains('active'),
+          marketing: toggleMarketing.classList.contains('active'),
+          functional: toggleFunctional.classList.contains('active'),
           timestamp: new Date().toISOString()
-        }));
+        };
+        localStorage.setItem(consentKey, JSON.stringify(preferences));
+        applyConsent(preferences);
         consentBanner.classList.add('hidden');
+        closePreferenceCenter();
       });
     }
-
-    // Load Google Analytics if consent given
+    
+    function getDefaultPreferences() {
+      return {
+        essential: true,
+        analytics: false,
+        marketing: false,
+        functional: true
+      };
+    }
+    
+    function applyConsent(preferences) {
+      if (preferences.analytics) {
+        loadGoogleAnalytics();
+      }
+      console.log('Consent preferences applied:', preferences);
+    }
+    
     function loadGoogleAnalytics() {
-      const consentKey = 'berliner-bengalis-gdpr-consent';
-      const consent = JSON.parse(localStorage.getItem(consentKey));
-      if (consent && consent.analytics) {
+      const consent = JSON.parse(localStorage.getItem('google-cmp-consent') || '{}');
+      if (consent.analytics) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-FL2JNSGKRN');
       }
     }
-
-    // Initialize on DOM ready
+    
+    // Initialize on page load
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initGDPRConsent);
+      document.addEventListener('DOMContentLoaded', initGoogleCMP);
     } else {
-      initGDPRConsent();
+      initGoogleCMP();
     }
   </script>
 </body>
