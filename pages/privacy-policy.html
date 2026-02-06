@@ -37,9 +37,14 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 0 2rem; width: 100%;">
-            <a href="../index.html"><img src="../images/logo.png" class="nav-logo" width="44" height="44" style="margin-right:10px; vertical-align:middle;"/>Berliner Bengalis e.V.</a>
-            <div style="margin-left: auto; display: flex; gap: 0.5rem; align-items: center;">
+        <div>
+            <a href="../index.html" class="logo"><span>Berliner Bengalis e.V.</span></a>
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar-menu">
                 <a href="../index.html#events">Events</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="about.html">About</a>
@@ -263,5 +268,7 @@
     });
   </script>
 
+    <!-- Include navbar toggle script -->
+    <script src="../js/navbar.js"></script>
 </body>
 </html>

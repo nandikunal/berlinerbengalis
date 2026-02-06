@@ -85,7 +85,7 @@ h3 {
    ======================================== */
 
 .navbar {
-  background: linear-gradient(135deg, var(--saffron) 0%, var(--burgundy) 100%);
+  background: linear-gradient(135deg, #FFE5B4 0%, #FFF0E6 100%);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   padding: 1rem 0;
   position: sticky;
@@ -94,11 +94,20 @@ h3 {
   width: 100%;
 }
 
+.navbar > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .navbar .logo {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.2rem, 3vw, 1.8rem);
   font-weight: 900;
-  color: var(--white);
+  color: #8B0000;
   margin-right: auto;
   display: flex;
   align-items: center;
@@ -111,14 +120,23 @@ h3 {
   font-size: 2rem;
 }
 
+.navbar-menu {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .navbar a {
-  color: var(--white);
+  color: #1a1a1a;
   text-decoration: none;
   margin: 0 1.5rem;
   font-weight: 600;
   font-size: 1.05rem;
   transition: all 0.3s ease;
   position: relative;
+  white-space: nowrap;
 }
 
 .navbar a::after {
@@ -128,12 +146,102 @@ h3 {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--white);
+  background: #DC143C;
   transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #DC143C;
 }
 
 .navbar a:hover::after {
   width: 100%;
+}
+
+/* Hamburger Menu Button */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+.navbar-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #1a1a1a;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* Mobile Menu Styles */
+.navbar.mobile-open .navbar-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  background: linear-gradient(135deg, #FFE5B4 0%, #FFF0E6 100%);
+  padding: 1rem 0;
+  gap: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 1rem;
+}
+
+.navbar.mobile-open .navbar-menu a {
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  display: block;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar > div {
+    padding: 0 0.75rem;
+    justify-content: center;
+    position: relative;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar.mobile-open .navbar-menu {
+    display: flex;
+  }
+
+  .navbar .logo {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    gap: 5px;
+    margin-right: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navbar .logo::before {
+    font-size: 1.5rem;
+  }
+
+  .navbar-toggle {
+    position: absolute;
+    right: 0.75rem;
+  }
+
+  .navbar a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    margin: 0;
+  }
 }
 
 /* ========================================
