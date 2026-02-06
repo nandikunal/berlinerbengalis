@@ -116,7 +116,6 @@ h3 {
 }
 
 .navbar .logo::before {
-  content: '🔱';
   font-size: 2rem;
 }
 
@@ -297,7 +296,7 @@ h3 {
   width: 44px;
   height: auto;
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 12px rgba(220, 196, 196, 0.25);
   vertical-align: middle;
   margin-right: 10px;
 }
