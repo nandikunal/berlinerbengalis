@@ -21,6 +21,7 @@ Your website now has:
 3. Enter website: `berlinerbengalis.com`
 4. Verify ownership (Google will provide meta tag)
 5. Add meta tag to `<head>` section of index.html
+6. **CRITICAL:** Ensure you have added the Privacy Policy page (see Step 1.5 below)
 6. Wait for approval (24-72 hours)
 
 ### Step 3: Replace Publisher ID (After AdSense Approval)
@@ -228,7 +229,7 @@ Before submitting to AdSense, verify:
 - [ ] Mobile site is responsive
 - [ ] Site loads quickly
 - [ ] No copyright/plagiarism issues
-- [ ] Privacy policy exists (TODO)
+- [ ] Privacy policy exists (Created in pages/privacy-policy.html)
 - [ ] Contact information available
 - [ ] No malware/suspicious content
 
@@ -284,6 +285,13 @@ Before submitting to AdSense, verify:
 3. Replace: Your actual Publisher ID
 4. Save all files
 5. Refresh browser (hard refresh: Ctrl+Shift+R)
+
+### "Rejected for Duplicate Content?"
+1. **Check Internal Duplication:** Ensure your Homepage "About" section is just a summary, not a copy-paste of the About page.
+2. **Check External Duplication:** Did you copy text from Wikipedia? Rewrite it in your own words.
+3. **Check Thin Content:** Does your Gallery page have text? Add 50-100 words describing the photos.
+4. **Privacy Policy:** Ensure `pages/privacy-policy.html` is linked in your footer.
+5. **Canonical Tags:** Add `<link rel="canonical" href="...">` to all pages.
 
 ---
 

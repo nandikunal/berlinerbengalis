@@ -37,18 +37,28 @@
   <link rel="alternate" hreflang="en" href="https://berlinerbengalis.com/">
   
   <!-- Icons -->
-  <link rel="icon" href="/images/logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="/images/logo.png">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo.png">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/template/bengali-theme.css" media="screen">
-  <link rel="stylesheet" href="/template/ads.css" media="screen">
-  <link rel="stylesheet" href="/template/forms.css" media="screen">
+  <link rel="stylesheet" href="template/bengali-theme.css" media="screen">
+  <link rel="stylesheet" href="template/ads.css" media="screen">
+  <link rel="stylesheet" href="template/forms.css" media="screen">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
+  <!-- Klaro config for Cookie consent -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/klaro/dist/klaro.min.css">
+  <script src="js/klaro-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/klaro/dist/klaro.min.js"></script>
+
   <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7408218273710039"
-    crossorigin="anonymous"></script>
+  <script
+    type="text/plain"
+    data-name="google-adsense"
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7408218273710039"
+    crossorigin="anonymous">
+  </script>
 
 <!-- Schema Markup - Organization -->
 <script type="application/ld+json">
@@ -110,29 +120,42 @@
   }
 }
 </script>
-
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL2JNSGKRN"></script>
-  <script>
+
+  <script type="text/plain" data-name="google-analytics">
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-FL2JNSGKRN');
+    gtag('config', 'G-FL2JNSGKRN', { anonymize_ip: true });
   </script>
   
-  <title>Durga Puja 2025 Berlin | Berliner Bengalis e.V. - Bengali Culture Celebration</title>
+  <title>Durga Puja 2025 Berlin | Berliner Bengalis e.V. - Berliner Bangali</title>
+  <style>
+    /* Fix for text visibility on mobile and hero contrast */
+    .hero-content {
+      background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text contrast */
+      padding: 2rem;
+      border-radius: 15px;
+      backdrop-filter: blur(2px);
+    }
+    .hero-title, .hero-subtitle, .hero-description {
+      color: #ffffff !important;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+  </style>
 </head>
 
 <body>
   <!-- Premium Navigation Bar -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 0 1rem; width: 100%;">
-      <a href="/index.html" class="logo" aria-label="Berliner Bengalis - Home"><img src="/images/logo.png" alt="Berliner Bengalis logo" class="nav-logo" width="44" height="44"/> <span>Berliner Bengalis</span></a>
+      <a href="index.html" aria-label="Berliner Bengalis - Home"><img src="images/logo.png" class="nav-logo" width="44" height="44"/> <span>Berliner Bengalis e.V.</span></a>
       <div style="margin-left: auto; display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; justify-content: flex-end;">
         <a href="#events" title="Explore Durga Puja events">Events</a>
-        <a href="/pages/gallery.html" title="View gallery of celebrations">Gallery</a>
-        <a href="/pages/about.html" title="Learn about our organization">About</a>
-        <a href="/pages/privacy.html" title="Read our privacy policy">Privacy</a>
+        <a href="pages/gallery.html" title="View gallery of celebrations">Gallery</a>
+        <a href="pages/about.html" title="Learn about our organization">About</a>
+        <a href="pages/privacy-policy.html" title="Read our privacy policy">Privacy</a>
         <a href="mailto:info@berlinerbengalis.com" title="Contact us" style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 25px;">Contact</a>
       </div>
     </div>
@@ -145,9 +168,7 @@
       <div class="hero-subtitle">Bengal's Pride • Berlin's Heart</div>
       <h1 class="hero-title">Durga Puja 2025 Berlin</h1>
       <p class="hero-description">Celebrating the victory of good over evil, the divine Goddess Durga in the heart of Berlin</p>
-      <p class="hero-description" style="font-size: 1.2rem; margin: 2rem 0;">
-        <strong>27th September – 3rd October, 2025</strong>
-      </p>
+      <p class="hero-description"><strong>27th September – 3rd October, 2025</strong></p>
       <button class="cta-button" onclick="document.getElementById('events').scrollIntoView({behavior: 'smooth'})" aria-label="Explore Events button">Explore Events</button>
       <div class="ornament" style="margin-top: 2rem;">🔱 ✦ 🔱</div>
     </div>
@@ -163,22 +184,22 @@
   </div>
 
   <!-- Venue & Invitation Section -->
-  <section class="section" style="text-align: center;">
+  <section class="section alternate" id="venue" aria-label="Venue and Invitation Durga Puja 2025">
     <div class="content-section">
       <h2>Venue & Sacred Invitation</h2>
       <div class="divider"></div>
-      <p style="font-size: 1.1rem; margin: 1.5rem 0; color: #555;">
+      <p style="text-align: center; font-size: 1.1rem; margin: 1.5rem 0; color: #555;">
         <span class="highlight">Zwölf-Apostel-Kirchengemeinde</span><br>
         An d. Apostelkirche 1, 10783 Berlin
       </p>
-      <p style="margin: 1.5rem 0; color: #666; line-height: 1.8; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <p style="text-align: center; margin: 1.5rem 0; color: #666; line-height: 1.8; margin-left: auto; margin-right: auto;">
         We warmly invite you to join us in the sacred celebration of Durga Puja in Berlin. Let the divine blessings of Goddess Durga surround you, and may our pandal feel like a home away from home. Come, let's unite in devotion, togetherness, and the cherished traditions that connect us all.
       </p>
       <div style="margin: 2rem auto; max-width: 550px; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4857.619638058624!2d13.35869!3d52.50068209999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8504bf39de045%3A0xb61a35a31d7baaec!2sZw%C3%B6lf-Apostel-Kirchengemeinde!5e0!3m2!1sen!2sde!4v1725899216113!5m2!1sen!2sde" 
           width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <p style="margin-top: 1.5rem; color: #666;">
+      <p style="text-align: center; margin-top: 1.5rem; color: #666;">
         <strong>For queries & information:</strong> <a href="mailto:info@berlinerbengalis.com" style="color: var(--saffron); text-decoration: none; font-weight: 700;">info@berlinerbengalis.com</a>
       </p>
     </div>
@@ -406,55 +427,35 @@
   </div>
 
   <!-- About Section -->
-  <section class="section alternate" id="about" aria-label="About Berliner Bengalis organization">
+  <section class="section alternate" id="about" aria-label="About Berliner Bengalis e.V.">
     <div class="content-section">
       <h2>About Berliner Bengalis e.V.</h2>
       <div class="divider"></div>
-
-      <div class="content-grid" style="margin-top: 2rem;">
-        <article class="content-text">
-          <h3 style="color: var(--saffron);">Our Mission &amp; Values</h3>
-          <p>Berliner Bengalis e.V. (Berlin's Bengali Association) is a registered non-profit community dedicated to preserving and promoting authentic Bengali culture, heritage, and Hindu Sanatani traditions in Berlin.</p>
-        </article>
-        <article class="content-text">
-          <h3 style="color: var(--green-dark);">Our Vision &amp; Impact</h3>
-          <p>We envision Berlin as a place where Bengali traditions flourish, Sanatani values thrive, and our community feels at home away from home.</p>
-          <p>Through Durga Puja celebrations and cultural activities, we honor our heritage while promoting environmental consciousness and community responsibility.</p>
-        </article>
-      </div>
-
-      <div style="background: var(--cream); padding: 2rem; border-radius: 15px; margin-top: 2rem; border-left: 5px solid var(--saffron);">
-        <h3 style="color: var(--saffron); margin-top: 0;">What We Do</h3>
-        <ul style="color: #555; line-height: 1.8; list-style: disc; padding-left: 2rem;">
-          <li><strong>Durga Puja Celebrations:</strong> Annual festival featuring grand pandal, authentic rituals, and traditional cultural programs</li>
-          <li><strong>Bengali Cultural Events:</strong> Music, dance, literature workshops, and artistic expressions</li>
-          <li><strong>Community Building:</strong> Creating inclusive spaces where Bengalis connect, support each other, and celebrate together</li>
-          <li><strong>Environmental Stewardship:</strong> Promoting eco-friendly and sustainable practices honoring Mother Earth</li>
-          <li><strong>Youth Engagement:</strong> Programs dedicated to passing on traditions and cultural pride to the next generation</li>
-        </ul>
-      </div>
-
+        <p style="text-align: center; color: #666; margin-bottom: 2rem; font-size: 1.1rem;">
+          Berliner Bengalis e.V. is a registered non-profit community in Berlin. We are dedicated to preserving authentic Bengali culture and Hindu traditions, creating a "home away from home" for everyone.
+        </p>        
       <p style="text-align: center; margin-top: 2rem;">
-        <a href="/pages/about.html" class="cta-button" style="text-decoration: none;">Learn More About Us</a>
+        <a href="pages/about.html" class="cta-button" style="text-decoration: none;">Read Our Full Story</a>
       </p>
     </div>
   </section>
 
   <!-- Newsletter & Contact Section -->
-  <section class="section" id="contact" style="background: linear-gradient(135deg, #FF9933 0%, #FFD700 50%, #138808 100%); color: white; text-align: center;" aria-label="Contact and newsletter section">
+  <!-- <section class="section alternate" id="contact" style="background: linear-gradient(135deg, #FF9933 0%, #FFD700 50%, #138808 100%); color: white;" aria-label="Contact and newsletter section"> -->
     <div class="content-section">
-      <h2 style="color: white;">Stay Connected with Our Community</h2>
-      <p style="font-size: 1.1rem; color: rgba(255,255,255,0.95); margin-bottom: 2rem;">
-        Subscribe to our newsletter and get updates about Durga Puja celebrations, cultural events, and community news
-      </p>
+      <!-- <h2 style="color: white;">Stay Connected with Our Community</h2> -->
+        <div class="divider"></div>
+        <!-- <p style="font-size: 1.1rem; color: rgba(255,255,255,0.95); margin-bottom: 2rem;">
+          Subscribe to our newsletter and get updates about Durga Puja celebrations, cultural events, and community news
+        </p> -->
       
       <div style="margin: 2rem 0;">
-        <p style="margin-bottom: 1rem;">
+        <!-- <p style="margin-bottom: 1rem;">
           <strong>📧 Email:</strong> <a href="mailto:info@berlinerbengalis.com" style="color: white; text-decoration: underline;">info@berlinerbengalis.com</a>
         </p>
         <p style="margin-bottom: 1rem;">
           <strong>📱 Follow Us:</strong> 
-        </p>
+        </p> -->
         <div class="social-icons">
           <a href="https://www.facebook.com/profile.php?id=61578774629835" target="_blank" title="Facebook">
             <i class="fab fa-facebook-f"></i>
@@ -468,9 +469,9 @@
         </div>
       </div>
     </div>
-  </section>
+  <!-- </section> -->
 
-  <!-- Contact Form Section -->
+  <!-- Contact Form Section
   <section class="section" id="contact-form" aria-label="Contact form section">
     <div class="content-section">
       <div class="contact-form-wrapper">
@@ -523,7 +524,7 @@
         </form>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Footer -->
   <footer>
@@ -537,8 +538,8 @@
         <h4>Quick Links</h4>
         <p><a href="#home">Home</a></p>
         <p><a href="#events">Events</a></p>
-        <p><a href="/pages/gallery.html">Gallery</a></p>
-        <p><a href="/pages/about.html">About</a></p>
+        <p><a href="pages/gallery.html">Gallery</a></p>
+        <p><a href="pages/about.html">About</a></p>
       </div>
       <div class="footer-section">
         <h4>Contact &amp; Support</h4>
@@ -550,8 +551,7 @@
       <p style="margin: 0; padding: 1rem 0;">🔱 © 2023-2025 Berliner Bengalis e.V. | All Rights Reserved 🔱</p>
       <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Celebrating Culture • Honoring Traditions • Building Community</p>
       <p style="margin: 0; opacity: 0.7; font-size: 0.85rem; margin-top: 0.5rem;">
-        <a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none;">Privacy Policy</a> | 
-        <a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none;">Terms of Service</a>
+        <a href="pages/privacy-policy.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Privacy Policy</a>
       </p>
     </div>
 
@@ -594,131 +594,6 @@
     document.querySelectorAll('.section, .card, .event-card').forEach(el => {
       observer.observe(el);
     });
-
-    // ========================================
-    // Google CMP - Consent Management Platform
-    // ========================================
-    
-    function initGoogleCMP() {
-      const consentBanner = document.getElementById('cmpConsentBanner');
-      const consentBtn = document.getElementById('cmpConsentBtn');
-      const manageBtn = document.getElementById('cmpManageBtn');
-      const overlay = document.getElementById('cmpOverlay');
-      const modal = document.getElementById('cmpModal');
-      const cancelBtn = document.getElementById('cmpCancelBtn');
-      const saveBtn = document.getElementById('cmpSaveBtn');
-      const toggleAnalytics = document.getElementById('cmpToggleAnalytics');
-      const toggleMarketing = document.getElementById('cmpToggleMarketing');
-      const toggleFunctional = document.getElementById('cmpToggleFunctional');
-      
-      const consentKey = 'google-cmp-consent';
-      
-      // Check existing consent
-      const existingConsent = localStorage.getItem(consentKey);
-      if (existingConsent) {
-        consentBanner.classList.add('hidden');
-        applyConsent(JSON.parse(existingConsent));
-        return;
-      }
-      
-      // Show banner
-      consentBanner.classList.remove('hidden');
-      
-      // Consent button - accept all
-      consentBtn.addEventListener('click', function() {
-        const preferences = {
-          essential: true,
-          analytics: true,
-          marketing: true,
-          functional: true,
-          timestamp: new Date().toISOString()
-        };
-        localStorage.setItem(consentKey, JSON.stringify(preferences));
-        applyConsent(preferences);
-        consentBanner.classList.add('hidden');
-      });
-      
-      // Manage button - open modal
-      manageBtn.addEventListener('click', function() {
-        openPreferenceCenter();
-      });
-      
-      // Preference center functions
-      function openPreferenceCenter() {
-        const current = existingConsent ? JSON.parse(existingConsent) : getDefaultPreferences();
-        
-        toggleAnalytics.classList.toggle('active', current.analytics);
-        toggleMarketing.classList.toggle('active', current.marketing);
-        toggleFunctional.classList.toggle('active', current.functional);
-        
-        overlay.classList.add('active');
-        modal.classList.remove('hidden');
-      }
-      
-      function closePreferenceCenter() {
-        overlay.classList.remove('active');
-        modal.classList.add('hidden');
-      }
-      
-      // Toggle switches
-      [toggleAnalytics, toggleMarketing, toggleFunctional].forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          this.classList.toggle('active');
-        });
-      });
-      
-      // Modal buttons
-      cancelBtn.addEventListener('click', closePreferenceCenter);
-      overlay.addEventListener('click', closePreferenceCenter);
-      
-      saveBtn.addEventListener('click', function() {
-        const preferences = {
-          essential: true,
-          analytics: toggleAnalytics.classList.contains('active'),
-          marketing: toggleMarketing.classList.contains('active'),
-          functional: toggleFunctional.classList.contains('active'),
-          timestamp: new Date().toISOString()
-        };
-        localStorage.setItem(consentKey, JSON.stringify(preferences));
-        applyConsent(preferences);
-        consentBanner.classList.add('hidden');
-        closePreferenceCenter();
-      });
-    }
-    
-    function getDefaultPreferences() {
-      return {
-        essential: true,
-        analytics: false,
-        marketing: false,
-        functional: true
-      };
-    }
-    
-    function applyConsent(preferences) {
-      if (preferences.analytics) {
-        loadGoogleAnalytics();
-      }
-      console.log('Consent preferences applied:', preferences);
-    }
-    
-    function loadGoogleAnalytics() {
-      const consent = JSON.parse(localStorage.getItem('google-cmp-consent') || '{}');
-      if (consent.analytics) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FL2JNSGKRN');
-      }
-    }
-    
-    // Initialize on page load
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initGoogleCMP);
-    } else {
-      initGoogleCMP();
-    }
 
     // ========================================
     // Contact Form Functionality
@@ -848,75 +723,6 @@
       });
     });
   </script>
+</body>
 
-  <!-- Google CMP - Consent Management Platform -->
-  <!-- Main Consent Banner - Simplified 2-choice design -->
-  <div id="cmpConsentBanner" class="cmp-consent-banner" role="region" aria-label="Cookie Consent Management">
-    <div class="cmp-content">
-      <div class="cmp-message">
-        <h3>🔒 Your Privacy Matters</h3>
-        <p>We use cookies and analytics to enhance your experience and serve personalized ads. By clicking "Consent," you agree to our use of cookies. Visit our <a href="/pages/privacy.html" target="_blank">Privacy Policy</a> to learn more.</p>
-      </div>
-      <div class="cmp-actions">
-        <button id="cmpManageBtn" class="cmp-btn cmp-btn-manage" aria-label="Manage cookie preferences">Manage</button>
-        <button id="cmpConsentBtn" class="cmp-btn cmp-btn-consent" aria-label="Consent to all cookies">Consent</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- CMP Preference Center Modal -->
-  <div id="cmpOverlay" class="cmp-overlay"></div>
-  <div id="cmpModal" class="cmp-modal hidden">
-    <div class="cmp-modal-header">
-      <h2>Manage Your Preferences</h2>
-    </div>
-    <div class="cmp-modal-body">
-      <!-- Essential Cookies (Always On) -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Essential Cookies</div>
-            <div class="cmp-preference-desc">Required for basic site functionality. Always enabled.</div>
-          </div>
-          <button class="cmp-toggle-switch active" disabled></button>
-        </div>
-      </div>
-
-      <!-- Analytics Cookies -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Analytics</div>
-            <div class="cmp-preference-desc">Help us understand how you use our site to improve your experience.</div>
-          </div>
-          <button id="cmpToggleAnalytics" class="cmp-toggle-switch" role="switch" aria-label="Toggle analytics cookies"></button>
-        </div>
-      </div>
-
-      <!-- Marketing/Ads Cookies -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Marketing & Advertising</div>
-            <div class="cmp-preference-desc">Allow personalized ads and marketing based on your browsing behavior.</div>
-          </div>
-          <button id="cmpToggleMarketing" class="cmp-toggle-switch" role="switch" aria-label="Toggle marketing cookies"></button>
-        </div>
-      </div>
-
-      <!-- Functional Cookies -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Functional Cookies</div>
-            <div class="cmp-preference-desc">Enable enhanced features and remember your preferences.</div>
-          </div>
-          <button id="cmpToggleFunctional" class="cmp-toggle-switch active" role="switch" aria-label="Toggle functional cookies"></button>
-        </div>
-      </div>
-    </div>
-    <div class="cmp-modal-footer">
-      <button id="cmpCancelBtn" class="cmp-modal-btn cmp-modal-btn-cancel">Cancel</button>
-      <button id="cmpSaveBtn" class="cmp-modal-btn cmp-modal-btn-save">Save Preferences</button>
-    </div>
-  </div>
+</html>

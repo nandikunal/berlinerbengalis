@@ -40,16 +40,20 @@
   <link rel="canonical" href="https://berlinerbengalis.com/pages/about.html">
   
   <!-- Icons -->
-  <link rel="icon" href="/images/logo.png">
-  <link rel="apple-touch-icon" href="/images/logo.png">
+  <link rel="icon" href="../images/logo.png">
+  <link rel="apple-touch-icon" href="../images/logo.png">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/template/bengali-theme.css">
-  <link rel="stylesheet" href="/template/menu.css">
-  <link rel="stylesheet" href="/template/slide.css">
-  <link rel="stylesheet" href="/template/ads.css">
-  <link rel="stylesheet" href="/template/forms.css" media="screen">
+  <link rel="stylesheet" href="../template/bengali-theme.css">
+  <link rel="stylesheet" href="../template/menu.css">
+  <link rel="stylesheet" href="../template/slide.css">
+  <link rel="stylesheet" href="../template/ads.css">
+  <link rel="stylesheet" href="../template/forms.css" media="screen">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Cookie Consent Management with Klaro -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/klaro/dist/klaro.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/klaro/dist/klaro.min.js"></script>
 
   <!-- Schema Markup for Organization -->
   <script type="application/ld+json">
@@ -88,7 +92,7 @@
     gtag('js', new Date());
     gtag('config', 'G-FL2JNSGKRN');
   </script>
-</head>
+
   <link rel="stylesheet" href="/template/ads.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -102,12 +106,12 @@
   <!-- Premium Navigation Bar -->
   <nav class="navbar">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 0 2rem; width: 100%;">
-      <a href="/index.html" class="logo">Berliner Bengalis</a>
+      <a href="../index.html"><img src="../images/logo.png" class="nav-logo" width="44" height="44" style="margin-right:10px; vertical-align:middle;"/>Berliner Bengalis e.V.</a>
       <div style="margin-left: auto; display: flex; gap: 0.5rem; align-items: center;">
-        <a href="/index.html#events">Events</a>
-        <a href="/pages/gallery.html">Gallery</a>
-        <a href="/pages/about.html">About</a>
-        <a href="/pages/privacy.html">Privacy</a>
+        <a href="../index.html#events">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="privacy-policy.html">Privacy</a>
         <a href="mailto:info@berlinerbengalis.com" style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 25px;">Contact</a>
       </div>
     </div>
@@ -118,7 +122,7 @@
     <div class="hero-content">
       <div class="ornament">🔱 ✦ 🔱</div>
       <h1 class="hero-title">Our Story</h1>
-      <p class="hero-description" style="font-size: 1.2rem;">Preserving Bengali Heritage in Berlin</p>
+      <!-- <p class="hero-description" style="font-size: 1.2rem;">Preserving Bengali Heritage in Berlin</p> -->
     </div>
   </section>
 
@@ -317,20 +321,20 @@
   </section>
 
   <!-- Join Us Section -->
-  <section class="section alternate" style="text-align: center;">
+  <section class="section alternate">
     <div class="content-section">
       <h2>Join Our Community</h2>
       <div class="divider" style="margin-left: auto; margin-right: auto;"></div>
       
-      <p style="font-size: 1.1rem; color: #555; margin: 2rem 0; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <p style="text-align: center; font-size: 1.1rem; color: #555; margin: 2rem 0; margin-left: auto; margin-right: auto;">
         Whether you are a Bengali, a friend of Bengali culture, or simply someone interested in experiencing authentic cultural celebrations, we warmly welcome you to join Berliner Bengalis e.V.
       </p>
 
       <div style="margin: 3rem 0;">
-        <p style="margin: 1rem 0;">
+        <p style="text-align: center; margin: 1rem 0;">
           <strong>📧 Get In Touch:</strong> <a href="mailto:info@berlinerbengalis.com" style="color: var(--saffron); font-weight: 700; text-decoration: none;">info@berlinerbengalis.com</a>
         </p>
-        <p style="margin: 1rem 0;">
+        <p style="text-align: center; margin: 1rem 0;">
           <strong>📱 Follow Us:</strong>
         </p>
         <div class="social-icons" style="margin: 1.5rem 0;">
@@ -340,7 +344,9 @@
         </div>
       </div>
 
-      <button class="cta-button" onclick="location.href='/index.html#events'" style="cursor: pointer;">Explore Events</button>
+      <p style="text-align: center; margin-top: 2rem;">
+        <a href="../index.html#events" class="cta-button" style="text-decoration: none;">Explore Events</a>
+      </p>
     </div>
   </section>
 
@@ -354,10 +360,10 @@
       </div>
       <div class="footer-section">
         <h4>Quick Links</h4>
-        <p><a href="/index.html">Home</a></p>
-        <p><a href="/index.html#events">Events</a></p>
-        <p><a href="/pages/gallery.html">Gallery</a></p>
-        <p><a href="/pages/about.html">About</a></p>
+        <p><a href="../index.html">Home</a></p>
+        <p><a href="../index.html#events">Events</a></p>
+        <p><a href="gallery.html">Gallery</a></p>
+        <p><a href="about.html">About</a></p>
       </div>
       <div class="footer-section">
         <h4>Contact</h4>
@@ -398,204 +404,8 @@
     });
   </script>
 
-  <!-- Google CMP - Consent Management Platform -->
-  <!-- Main Consent Banner - Simplified 2-choice design -->
-  <div id="cmpConsentBanner" class="cmp-consent-banner" role="region" aria-label="Cookie Consent Management">
-    <div class="cmp-content">
-      <div class="cmp-message">
-        <h3>🔒 Your Privacy Matters</h3>
-        <p>We use cookies and analytics to enhance your experience and serve personalized ads. By clicking "Consent," you agree to our use of cookies. Visit our <a href="/pages/privacy.html" target="_blank">Privacy Policy</a> to learn more.</p>
-      </div>
-      <div class="cmp-actions">
-        <button id="cmpManageBtn" class="cmp-btn cmp-btn-manage" aria-label="Manage cookie preferences">Manage</button>
-        <button id="cmpConsentBtn" class="cmp-btn cmp-btn-consent" aria-label="Consent to all cookies">Consent</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- CMP Preference Center Modal -->
-  <div id="cmpOverlay" class="cmp-overlay"></div>
-  <div id="cmpModal" class="cmp-modal hidden">
-    <div class="cmp-modal-header">
-      <h2>Manage Your Preferences</h2>
-    </div>
-    <div class="cmp-modal-body">
-      <!-- Essential Cookies (Always On) -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Essential Cookies</div>
-            <div class="cmp-preference-desc">Required for basic site functionality. Always enabled.</div>
-          </div>
-          <button class="cmp-toggle-switch active" disabled></button>
-        </div>
-      </div>
-
-      <!-- Analytics Cookies -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Analytics</div>
-            <div class="cmp-preference-desc">Help us understand how you use our site to improve your experience.</div>
-          </div>
-          <button id="cmpToggleAnalytics" class="cmp-toggle-switch" role="switch" aria-label="Toggle analytics cookies"></button>
-        </div>
-      </div>
-
-      <!-- Marketing/Ads Cookies -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Marketing & Advertising</div>
-            <div class="cmp-preference-desc">Allow personalized ads and marketing based on your browsing behavior.</div>
-          </div>
-          <button id="cmpToggleMarketing" class="cmp-toggle-switch" role="switch" aria-label="Toggle marketing cookies"></button>
-        </div>
-      </div>
-
-      <!-- Functional Cookies -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Functional Cookies</div>
-            <div class="cmp-preference-desc">Enable enhanced features and remember your preferences.</div>
-          </div>
-          <button id="cmpToggleFunctional" class="cmp-toggle-switch active" role="switch" aria-label="Toggle functional cookies"></button>
-        </div>
-      </div>
-    </div>
-    <div class="cmp-modal-footer">
-      <button id="cmpCancelBtn" class="cmp-modal-btn cmp-modal-btn-cancel">Cancel</button>
-      <button id="cmpSaveBtn" class="cmp-modal-btn cmp-modal-btn-save">Save Preferences</button>
-    </div>
-  </div>
-
-  <script>
-    // ========================================
-    // Google CMP - Consent Management Platform
-    // ========================================
-    
-    function initGoogleCMP() {
-      const consentBanner = document.getElementById('cmpConsentBanner');
-      const consentBtn = document.getElementById('cmpConsentBtn');
-      const manageBtn = document.getElementById('cmpManageBtn');
-      const overlay = document.getElementById('cmpOverlay');
-      const modal = document.getElementById('cmpModal');
-      const cancelBtn = document.getElementById('cmpCancelBtn');
-      const saveBtn = document.getElementById('cmpSaveBtn');
-      const toggleAnalytics = document.getElementById('cmpToggleAnalytics');
-      const toggleMarketing = document.getElementById('cmpToggleMarketing');
-      const toggleFunctional = document.getElementById('cmpToggleFunctional');
-      
-      const consentKey = 'google-cmp-consent';
-      
-      // Check existing consent
-      const existingConsent = localStorage.getItem(consentKey);
-      if (existingConsent) {
-        consentBanner.classList.add('hidden');
-        applyConsent(JSON.parse(existingConsent));
-        return;
-      }
-      
-      // Show banner
-      consentBanner.classList.remove('hidden');
-      
-      // Consent button - accept all
-      consentBtn.addEventListener('click', function() {
-        const preferences = {
-          essential: true,
-          analytics: true,
-          marketing: true,
-          functional: true,
-          timestamp: new Date().toISOString()
-        };
-        localStorage.setItem(consentKey, JSON.stringify(preferences));
-        applyConsent(preferences);
-        consentBanner.classList.add('hidden');
-      });
-      
-      // Manage button - open modal
-      manageBtn.addEventListener('click', function() {
-        openPreferenceCenter();
-      });
-      
-      // Preference center functions
-      function openPreferenceCenter() {
-        const current = existingConsent ? JSON.parse(existingConsent) : getDefaultPreferences();
-        
-        toggleAnalytics.classList.toggle('active', current.analytics);
-        toggleMarketing.classList.toggle('active', current.marketing);
-        toggleFunctional.classList.toggle('active', current.functional);
-        
-        overlay.classList.add('active');
-        modal.classList.remove('hidden');
-      }
-      
-      function closePreferenceCenter() {
-        overlay.classList.remove('active');
-        modal.classList.add('hidden');
-      }
-      
-      // Toggle switches
-      [toggleAnalytics, toggleMarketing, toggleFunctional].forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          this.classList.toggle('active');
-        });
-      });
-      
-      // Modal buttons
-      cancelBtn.addEventListener('click', closePreferenceCenter);
-      overlay.addEventListener('click', closePreferenceCenter);
-      
-      saveBtn.addEventListener('click', function() {
-        const preferences = {
-          essential: true,
-          analytics: toggleAnalytics.classList.contains('active'),
-          marketing: toggleMarketing.classList.contains('active'),
-          functional: toggleFunctional.classList.contains('active'),
-          timestamp: new Date().toISOString()
-        };
-        localStorage.setItem(consentKey, JSON.stringify(preferences));
-        applyConsent(preferences);
-        consentBanner.classList.add('hidden');
-        closePreferenceCenter();
-      });
-    }
-    
-    function getDefaultPreferences() {
-      return {
-        essential: true,
-        analytics: false,
-        marketing: false,
-        functional: true
-      };
-    }
-    
-    function applyConsent(preferences) {
-      if (preferences.analytics) {
-        loadGoogleAnalytics();
-      }
-      console.log('Consent preferences applied:', preferences);
-    }
-    
-    function loadGoogleAnalytics() {
-      const consent = JSON.parse(localStorage.getItem('google-cmp-consent') || '{}');
-      if (consent.analytics) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FL2JNSGKRN');
-      }
-    }
-    
-    // Initialize on page load
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initGoogleCMP);
-    } else {
-      initGoogleCMP();
-    }
-  </script>
+  <!-- Include shared CMP module as fallback -->
+  <script src="../js/cmp.js"></script>
 </body>
 
 </html>
