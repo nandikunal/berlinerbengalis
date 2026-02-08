@@ -229,8 +229,8 @@
   <!-- Premium Navigation Bar -->
   <nav class="navbar">
     <div>
-      <a href="../index.html" class="logo">
-        <img src="/images/logo.png" class="nav-logo" width="44" height="44" />
+      <a href="/index.html" class="logo">
+        <img src="/images/logo.png" class="logo-img">
         <span>Berliner Bengalis e.V.</span>
       </a>
       <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu">
@@ -239,10 +239,10 @@
         <span></span>
       </button>
       <div class="navbar-menu">
-        <a href="event.html">Events</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About</a>
-        <a href="privacy-policy.html">Privacy</a>
+        <a href="/pages/event.html">Events</a>
+        <a href="/pages/gallery.html">Gallery</a>
+        <a href="/pages/about.html">About</a>
+        <a href="/pages/privacy-policy.html">Privacy</a>
         <a href="mailto:info@berlinerbengalis.com"
           style="background: #DC143C; padding: 8px 16px; border-radius: 25px; color: white;">Contact</a>
       </div>
@@ -488,10 +488,10 @@
       </div>
       <div class="footer-section">
         <h4>Quick Links</h4>
-        <p><a href="../index.html">Home</a></p>
-        <p><a href="../index.html#events">Events</a></p>
-        <p><a href="gallery.html">Gallery</a></p>
-        <p><a href="about.html">About</a></p>
+        <p><a href="/index.html">Home</a></p>
+        <p><a href="/pages/event.html">Events</a></p>
+        <p><a href="/pages/gallery.html">Gallery</a></p>
+        <p><a href="/pages/about.html">About</a></p>
       </div>
       <div class="footer-section">
         <h4>Contact</h4>
@@ -614,67 +614,6 @@
       });
     });
   </script>
-
-  <!-- Google CMP - Consent Management Platform -->
-  <!-- CMP Preference Center Modal -->
-  <div id="cmpOverlay" class="cmp-overlay"></div>
-  <div id="cmpModal" class="cmp-modal hidden">
-    <div class="cmp-modal-header">
-      <h2>Manage Your Preferences</h2>
-    </div>
-    <div class="cmp-modal-body">
-      <!-- Essential Cookies (Always On) -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Essential Cookies</div>
-            <div class="cmp-preference-desc">Required for basic site functionality. Always enabled.</div>
-          </div>
-          <button class="cmp-toggle-switch active" disabled></button>
-        </div>
-      </div>
-
-      <!-- Analytics Cookies -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Analytics</div>
-            <div class="cmp-preference-desc">Help us understand how you use our site to improve your experience.</div>
-          </div>
-          <button id="cmpToggleAnalytics" class="cmp-toggle-switch" role="switch"
-            aria-label="Toggle analytics cookies"></button>
-        </div>
-      </div>
-
-      <!-- Marketing/Ads Cookies -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Marketing & Advertising</div>
-            <div class="cmp-preference-desc">Allow personalized ads and marketing based on your browsing behavior.</div>
-          </div>
-          <button id="cmpToggleMarketing" class="cmp-toggle-switch" role="switch"
-            aria-label="Toggle marketing cookies"></button>
-        </div>
-      </div>
-
-      <!-- Functional Cookies -->
-      <div class="cmp-preference-group">
-        <div class="cmp-preference-header">
-          <div>
-            <div class="cmp-preference-label">Functional Cookies</div>
-            <div class="cmp-preference-desc">Enable enhanced features and remember your preferences.</div>
-          </div>
-          <button id="cmpToggleFunctional" class="cmp-toggle-switch active" role="switch"
-            aria-label="Toggle functional cookies"></button>
-        </div>
-      </div>
-    </div>
-    <div class="cmp-modal-footer">
-      <button id="cmpCancelBtn" class="cmp-modal-btn cmp-modal-btn-cancel">Cancel</button>
-      <button id="cmpSaveBtn" class="cmp-modal-btn cmp-modal-btn-save">Save Preferences</button>
-    </div>
-  </div>
 
   <!-- Include shared CMP module -->
   <script src="../js/cmp.js"></script>
