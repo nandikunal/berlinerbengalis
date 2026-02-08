@@ -10,6 +10,13 @@
     <!-- Google AdSense Account Meta Tag -->
     <meta name="google-adsense-account" content="ca-pub-7408218273710039">
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://berlinerbengalis.com/pages/privacy-policy.html">
+
+    <!-- Icons -->
+    <link rel="icon" href="../images/logo.png">
+    <link rel="apple-touch-icon" href="../images/logo.png">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Berliner Bengalis</title>
@@ -79,8 +86,8 @@
     <!-- Premium Navigation Bar -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div>
-            <a href="/index.html" class="logo" aria-label="Berliner Bengalis - Home">
-                <img src="/images/logo.png" class="nav-logo" width="44" height="44" />
+            <a href="/index.html" class="logo">
+                <img src="/images/logo.png" class="logo-img">
                 <span>Berliner Bengalis e.V.</span>
             </a>
             <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu">
@@ -271,10 +278,10 @@
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <p><a href="../index.html">Home</a></p>
-                <p><a href="../index.html#events">Events</a></p>
-                <p><a href="gallery.html">Gallery</a></p>
-                <p><a href="about.html">About</a></p>
+                <p><a href="/index.html">Home</a></p>
+                <p><a href="/pages/event.html">Events</a></p>
+                <p><a href="/pages/gallery.html">Gallery</a></p>
+                <p><a href="/pages/about.html">About</a></p>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
@@ -306,7 +313,9 @@
             });
         });
     </script>
-
+    
+    <!-- Include shared CMP module as fallback -->
+    <script src="../js/cmp.js"></script>
     <!-- Include navbar toggle script -->
     <script src="../js/navbar.js"></script>
 </body>

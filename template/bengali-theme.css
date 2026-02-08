@@ -119,6 +119,14 @@ h3 {
   font-size: 2rem;
 }
 
+.navbar .logo-img {
+  height: 1.8rem;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .navbar-menu {
   display: flex;
   gap: 0.5rem;
