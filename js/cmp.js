@@ -222,10 +222,14 @@
     initModal();
   }
 
+  /* ── Export to global scope for footer button ── */
+  window.BBShowConsentModal = openModal;
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
 })();
+
 
