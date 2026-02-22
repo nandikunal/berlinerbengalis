@@ -1,468 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Meta Tags for SEO -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#FF9933">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/template/bengali-theme.css" />
+  <link rel="stylesheet" href="/template/ads.css" />
+  <meta name="description" content="About Berliner Bengalis e.V. — a non-profit Bengali cultural association in Berlin celebrating Durga Puja and Hindu Sanatani traditions." />
+  <title>About | Berliner Bengalis e.V.</title>
+  <style>
+/* ── BB DESIGN SYSTEM ── */
+:root{
+  --saffron:#FF9933; --saffron-d:#E07A00; --green:#138808; --green-d:#0d5c06;
+  --red:#8B0000; --gold:#FFD700; --cream:#FFF8E7; --white:#fff;
+  --dark:#1a1a1a; --mid:#555; --light:#f9f4ee;
+  --radius:10px; --shadow:0 2px 16px rgba(0,0,0,.08);
+  --max:960px; --font-body:'Baloo 2',system-ui,sans-serif;
+  --font-head:'Playfair Display',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--dark);background:var(--light);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--saffron);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:var(--font-head);line-height:1.25}
 
-  <!-- Google AdSense Account Meta Tag -->
-  <meta name="google-adsense-account" content="ca-pub-7408218273710039">
+/* ── NAVBAR ── */
+.bb-nav{background:#fff;border-bottom:1px solid rgba(0,0,0,.07);position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.bb-nav__inner{max-width:var(--max);margin:0 auto;padding:.75rem 1.25rem;display:flex;align-items:center;gap:1rem}
+.bb-nav__brand{display:flex;align-items:center;gap:.6rem;font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--red);white-space:nowrap;text-decoration:none}
+.bb-nav__brand:hover{text-decoration:none;opacity:.85}
+.bb-nav__logo{border-radius:6px;flex-shrink:0}
+.bb-nav__ev{font-size:.85em;opacity:.7}
+.bb-nav__links{margin-left:auto;display:flex;gap:.25rem;align-items:center}
+.bb-nav__links a{padding:.4rem .75rem;border-radius:6px;font-size:.9rem;font-weight:600;color:var(--dark);transition:background .2s,color .2s}
+.bb-nav__links a:hover,.bb-nav__links a[aria-current="page"]{background:rgba(255,153,51,.12);color:var(--saffron);text-decoration:none}
+.bb-nav__toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem;margin-left:auto}
+.bb-nav__toggle span{width:22px;height:2px;background:var(--dark);border-radius:2px;display:block;transition:all .25s}
+.bb-nav__toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.bb-nav__toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.bb-nav__toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:680px){
+  .bb-nav__toggle{display:flex}
+  .bb-nav__links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:.75rem 1.25rem;gap:.25rem;border-bottom:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+  .bb-nav__links.open{display:flex}
+  .bb-nav__links a{padding:.65rem .75rem;font-size:1rem}
+  .bb-nav__inner{position:relative}
+}
 
-  <!-- Klaro config for Cookie consent -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/klaro/dist/klaro.min.css">
-  <script src="/js/klaro-config.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/klaro/dist/klaro.min.js"></script>
+/* ── FOOTER ── */
+.bb-footer{background:var(--dark);color:#aaa;padding:2.5rem 1.25rem;text-align:center;font-size:.85rem}
+.bb-footer__inner{max-width:var(--max);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1rem}
+.bb-footer__brand{font-family:var(--font-head);font-size:1.1rem;color:#fff;font-weight:700}
+.bb-footer__links{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem .75rem}
+.bb-footer__links a,.bb-footer__cookie-btn{color:#aaa;font-size:.83rem;background:none;border:none;cursor:pointer;padding:0;font-family:inherit;transition:color .2s}
+.bb-footer__links a:hover,.bb-footer__cookie-btn:hover{color:var(--saffron);text-decoration:none}
+.bb-footer__social{display:flex;gap:.75rem}
+.bb-footer__social a{color:#aaa;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.07);transition:background .2s,color .2s}
+.bb-footer__social a:hover{background:var(--saffron);color:#fff}
+.bb-footer__copy{color:#666;font-size:.78rem}
+.bb-footer__copy a{color:#888}
+.bb-footer__copy a:hover{color:var(--saffron)}
 
-  <!-- Google AdSense -->
-  <script type="text/plain" data-name="google-adsense" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7408218273710039"
-    crossorigin="anonymous">
-  </script>
+/* ── CONSENT BANNER ── */
+.bb-cmp{position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#fff;z-index:9999;border-top:3px solid var(--saffron);animation:bbSlideUp .35s ease-out}
+@keyframes bbSlideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.bb-cmp__inner{max-width:var(--max);margin:0 auto;padding:1.1rem 1.25rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.bb-cmp__text{flex:1;min-width:220px;font-size:.85rem;line-height:1.5}
+.bb-cmp__text strong{display:block;margin-bottom:.3rem;font-size:.95rem;color:var(--saffron)}
+.bb-cmp__text p{color:#ccc;margin:0}
+.bb-cmp__text a{color:var(--saffron)}
+.bb-cmp__actions{display:flex;gap:.6rem;flex-wrap:wrap}
+.bb-cmp__btn{padding:.55rem 1.2rem;border-radius:6px;font-size:.82rem;font-weight:700;cursor:pointer;border:2px solid transparent;font-family:inherit;transition:all .2s;white-space:nowrap;letter-spacing:.3px}
+.bb-cmp__btn--accept{background:var(--saffron);color:#fff;border-color:var(--saffron)}
+.bb-cmp__btn--accept:hover{background:var(--saffron-d);border-color:var(--saffron-d)}
+.bb-cmp__btn--manage{background:transparent;color:#ccc;border-color:#555}
+.bb-cmp__btn--manage:hover{border-color:#aaa;color:#fff}
+.bb-cmp__btn--reject{background:transparent;color:#888;border-color:#444}
+.bb-cmp__btn--reject:hover{border-color:#888;color:#ccc}
+@media(max-width:600px){
+  .bb-cmp__inner{flex-direction:column;gap:.75rem;align-items:stretch}
+  .bb-cmp__actions{flex-direction:column}
+  .bb-cmp__btn{text-align:center}
+}
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL2JNSGKRN"></script>
+/* ── CONSENT MODAL ── */
+/* ── PAGE SHELL ── */
+.bb-page{max-width:var(--max);margin:0 auto;padding:3rem 1.25rem}
+@media(max-width:600px){.bb-page{padding:2rem .9rem}}
+.bb-section{margin-bottom:3rem}
+.bb-section+.bb-section{padding-top:2.5rem;border-top:1px solid rgba(255,153,51,.15)}
+.bb-heading{font-size:clamp(1.5rem,3.5vw,2.1rem);color:var(--saffron-d);margin-bottom:1.25rem;position:relative;padding-bottom:.75rem}
+.bb-heading::after{content:'';position:absolute;bottom:0;left:0;width:48px;height:3px;background:linear-gradient(to right,var(--saffron),var(--green));border-radius:2px}
+.bb-lead{color:var(--mid);font-size:1rem;max-width:640px;line-height:1.75}
 
-  <script type="text/plain" data-name="google-analytics">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FL2JNSGKRN', { anonymize_ip: true });
-  </script>
+/* ── CARDS GRID ── */
+.bb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem;margin-top:1.25rem}
+.bb-card{background:#fff;border-radius:var(--radius);padding:1.25rem 1.1rem;box-shadow:var(--shadow);border-top:3px solid var(--saffron)}
+.bb-card h3{font-size:.95rem;color:var(--saffron-d);margin-bottom:.4rem;font-family:var(--font-body);font-weight:700}
+.bb-card p{font-size:.88rem;color:var(--mid);line-height:1.6;margin:0}
+.bb-card a{color:var(--saffron)}
 
-  <!-- Primary Meta Tags -->
-  <title>About Berliner Bengalis e.V. - Bengali Culture, Heritage &amp; Community in Berlin</title>
-  <meta name="title" content="About Berliner Bengalis e.V. - Bengali Culture, Heritage &amp; Community in Berlin">
-  <meta name="description"
-    content="Discover Berliner Bengalis e.V., a vibrant non-profit dedicated to preserving Bengali heritage, celebrating Durga Puja, and fostering community. Learn about our mission, values, and cultural impact in Berlin.">
-  <meta name="keywords"
-    content="Berliner Bengalis e.V., Berlin Bengali community, Durga Puja Berlin, Bengali culture, heritage, Sanatani traditions, Hindu celebrations, non-profit Berlin">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="author" content="Berliner Bengalis e.V.">
-  <meta name="language" content="English">
+/* ── HERO ── */
+.bb-hero{background:linear-gradient(rgba(90,20,20,.72),rgba(139,58,98,.55)),url('/images/maa-durga.jpeg') center/cover no-repeat fixed;min-height:min(600px,80vh);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:3rem 1.25rem}
+.bb-hero__inner{max-width:660px}
+.bb-hero__eyebrow{font-size:.85rem;letter-spacing:3px;text-transform:uppercase;opacity:.85;margin-bottom:.75rem}
+.bb-hero__title{font-family:var(--font-head);font-size:clamp(2.2rem,6vw,3.8rem);font-weight:900;line-height:1.15;margin-bottom:.75rem;text-shadow:2px 3px 8px rgba(0,0,0,.35)}
+.bb-hero__sub{font-size:clamp(.95rem,2.5vw,1.15rem);opacity:.9;margin-bottom:2rem;line-height:1.7}
+.bb-hero__btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.bb-btn{display:inline-block;padding:.7rem 1.6rem;border-radius:8px;font-weight:700;font-size:.9rem;cursor:pointer;border:2px solid transparent;transition:all .2s;font-family:inherit;line-height:1.4;text-align:center}
+.bb-btn--primary{background:var(--saffron);color:#fff;border-color:var(--saffron)}
+.bb-btn--primary:hover{background:var(--saffron-d);border-color:var(--saffron-d);text-decoration:none;color:#fff}
+.bb-btn--outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.bb-btn--outline:hover{background:rgba(255,255,255,.12);text-decoration:none;color:#fff}
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://berlinerbengalis.com/pages/about.html">
-  <meta property="og:title" content="About Berliner Bengalis e.V. - Bengali Culture &amp; Community in Berlin">
-  <meta property="og:description"
-    content="Learn about our mission to preserve Bengali culture, celebrate Durga Puja, and build community in Berlin. Discover our values and cultural impact.">
-  <meta property="og:image" content="https://berlinerbengalis.com/images/about-cover.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="en_US">
+/* ── AD SLOTS ── */
+.bb-ad{text-align:center;margin:2rem auto;max-width:var(--max);padding:0 1.25rem}
+.bb-ad__label{font-size:.68rem;color:#bbb;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.3rem}
+.bb-ad__unit{background:#fff;border-radius:8px;padding:.75rem;box-shadow:0 1px 6px rgba(0,0,0,.06);min-height:90px;display:flex;align-items:center;justify-content:center}
+.bb-ad__unit ins{display:block;width:100%}
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://berlinerbengalis.com/pages/about.html">
-  <meta property="twitter:title" content="About Berliner Bengalis e.V.">
-  <meta property="twitter:description" content="Preserving Bengali heritage and celebrating Durga Puja in Berlin.">
-  <meta property="twitter:image" content="https://berlinerbengalis.com/images/about-cover.jpg">
+/* ── TIMELINE (event page) ── */
+.bb-timeline{margin-top:1.5rem}
+.bb-tl-item{display:grid;grid-template-columns:90px 1fr;gap:1.1rem;margin-bottom:1.75rem;align-items:start}
+.bb-tl-date{background:var(--saffron);color:#fff;border-radius:8px;padding:.5rem .6rem;text-align:center;font-size:.8rem;font-weight:700;line-height:1.3;flex-shrink:0}
+.bb-tl-date span{display:block;font-size:1.1rem;font-weight:900}
+.bb-tl-body{background:#fff;border-radius:var(--radius);padding:1rem 1.1rem;box-shadow:var(--shadow)}
+.bb-tl-body h3{font-size:1rem;color:var(--red);margin-bottom:.35rem;font-family:var(--font-body);font-weight:700}
+.bb-tl-body p{font-size:.88rem;color:var(--mid);margin:0 0 .4rem}
+.bb-tl-body .bb-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.5rem}
+.bb-tag{background:rgba(255,153,51,.1);color:var(--saffron-d);border-radius:20px;padding:.2rem .6rem;font-size:.75rem;font-weight:600}
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://berlinerbengalis.com/pages/about.html">
+/* ── FAQ ── */
+.bb-faq{margin-top:1.25rem}
+details.bb-faq__item{background:#fff;border-radius:8px;margin-bottom:.6rem;box-shadow:0 1px 6px rgba(0,0,0,.06);overflow:hidden}
+details.bb-faq__item summary{padding:.9rem 1.1rem;cursor:pointer;font-weight:600;font-size:.92rem;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--dark)}
+details.bb-faq__item summary::after{content:'＋';font-size:1.1rem;color:var(--saffron);transition:transform .2s}
+details.bb-faq__item[open] summary::after{content:'－'}
+details.bb-faq__item .bb-faq__ans{padding:.25rem 1.1rem 1rem;font-size:.88rem;color:var(--mid);line-height:1.7}
 
-  <!-- Icons -->
-  <link rel="icon" href="../images/logo.png">
-  <link rel="apple-touch-icon" href="../images/logo.png">
+/* ── GALLERY ── */
+.bb-gallery-note{background:#fff;border-radius:var(--radius);padding:2rem;text-align:center;box-shadow:var(--shadow);color:var(--mid)}
+.bb-gallery-note h3{color:var(--saffron-d);margin-bottom:.5rem}
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../template/bengali-theme.css">
-  <link rel="stylesheet" href="../template/menu.css">
-  <link rel="stylesheet" href="../template/slide.css">
-  <link rel="stylesheet" href="../template/ads.css">
-  <link rel="stylesheet" href="../template/forms.css" media="screen">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+/* ── ABOUT MISSION ── */
+.bb-mission{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.25rem}
+.bb-mission__item{background:#fff;border-radius:var(--radius);padding:1.1rem;box-shadow:var(--shadow);border-left:3px solid var(--saffron)}
+.bb-mission__item h3{font-size:.92rem;color:var(--saffron-d);margin-bottom:.3rem;font-family:var(--font-body);font-weight:700}
+.bb-mission__item p{font-size:.84rem;color:var(--mid);margin:0;line-height:1.6}
 
-  <!-- Schema Markup for Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["Organization", "LocalBusiness"],
-    "name": "Berliner Bengalis e.V.",
-    "url": "https://berlinerbengalis.com/",
-    "logo": "https://berlinerbengalis.com/images/logo.png",
-    "description": "A non-profit association dedicated to preserving and promoting Bengali culture, celebrating Durga Puja, and building community for Bengalis in Berlin.",
-    "image": "https://berlinerbengalis.com/images/about-cover.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Berlin",
-      "addressCountry": "DE"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "info@berlinerbengalis.com",
-      "availableLanguage": ["en", "de"]
-    },
-    "foundingDate": "2023",
-    "areaServed": "Berlin",
-    "sameAs": [
-      "https://www.facebook.com/berlinerbengalis"
-    ]
-  }
-  </script>
+/* ── PRIVACY ── */
+.bb-privacy{max-width:760px;margin:0 auto;padding:3rem 1.25rem}
+.bb-privacy h1{font-size:clamp(1.6rem,4vw,2.2rem);color:var(--saffron);margin-bottom:.3rem}
+.bb-privacy .bb-updated{color:#999;font-size:.85rem;margin-bottom:2rem}
+.bb-privacy h2{font-size:1.1rem;color:var(--saffron-d);margin:2rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid #eee;font-family:var(--font-body);font-weight:700}
+.bb-privacy p,.bb-privacy li{font-size:.92rem;color:var(--mid);line-height:1.8}
+.bb-privacy ul{padding-left:1.4rem;margin:.5rem 0 1rem}
+.bb-privacy table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.85rem}
+.bb-privacy th{background:var(--saffron);color:#fff;padding:.55rem .75rem;text-align:left;font-weight:700}
+.bb-privacy td{padding:.55rem .75rem;border-bottom:1px solid #eee;vertical-align:top}
+.bb-privacy tr:nth-child(even) td{background:#fffaf5}
+.bb-privacy a{color:var(--saffron)}
+.bb-back{display:inline-block;margin-bottom:1.5rem;font-size:.88rem;font-weight:600;color:var(--saffron)}
+@media(max-width:600px){.bb-privacy{padding:2rem .9rem}}
 
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL2JNSGKRN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-FL2JNSGKRN');
-  </script>
+/* ── UTILITIES ── */
+.hidden{display:none!important}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
-  <link rel="stylesheet" href="/template/ads.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+/* ── CONSENT MODAL ── */
+.bb-cmp-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9998;display:none}
+.bb-cmp-overlay[aria-hidden="false"]{display:block}
+.bb-cmp-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;color:var(--dark);border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.25);z-index:10000;width:min(480px,94vw);max-height:85vh;overflow-y:auto;display:none}
+.bb-cmp-modal[aria-hidden="false"]{display:block}
+.bb-cmp-modal__head{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 1.5rem 1rem;border-bottom:1px solid #eee}
+.bb-cmp-modal__head h2{font-size:1.15rem;color:var(--dark)}
+.bb-cmp-modal__close{background:none;border:none;font-size:1.2rem;cursor:pointer;color:#999;line-height:1;padding:.2rem .4rem;border-radius:4px}
+.bb-cmp-modal__close:hover{background:#f0f0f0;color:var(--dark)}
+.bb-cmp-modal__body{padding:1.5rem}
+.bb-cmp-pref{margin-bottom:1.25rem}
+.bb-cmp-pref:last-child{margin-bottom:0}
+.bb-cmp-pref__row{display:flex;align-items:flex-start;gap:1rem;justify-content:space-between}
+.bb-cmp-pref__row strong{display:block;font-size:.95rem;margin-bottom:.25rem}
+.bb-cmp-pref__row p{font-size:.82rem;color:#777;margin:0}
+.bb-cmp-toggle{width:46px;height:26px;border-radius:13px;background:#ccc;border:none;cursor:pointer;position:relative;flex-shrink:0;transition:background .25s}
+.bb-cmp-toggle::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:left .25s;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.bb-cmp-toggle[data-active="true"]{background:var(--saffron)}
+.bb-cmp-toggle[data-active="true"]::after{left:23px}
+.bb-cmp-toggle:disabled{cursor:not-allowed;opacity:.6}
+.bb-cmp-modal__foot{padding:1rem 1.5rem 1.5rem;border-top:1px solid #eee;display:flex;justify-content:flex-end}
+</style>
 </head>
-
 <body>
-  <!-- Premium Navigation Bar -->
-  <nav class="navbar">
-    <div>
-      <a href="/index.html" class="logo">
-        <img src="/images/logo.png" class="logo-img">
-        <span>Berliner Bengalis e.V.</span>
+  <nav class="bb-nav" id="bbNav" role="navigation" aria-label="Main navigation">
+    <div class="bb-nav__inner">
+      <a href="/" class="bb-nav__brand" aria-label="Berliner Bengalis – Home">
+        <img src="/images/logo.png" alt="" width="36" height="36" class="bb-nav__logo" />
+        <span class="bb-nav__name">Berliner Bengalis<span class="bb-nav__ev"> e.V.</span></span>
       </a>
-      <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="navbar-menu">
-        <a href="/pages/event.html">Events</a>
-        <a href="/pages/gallery.html">Gallery</a>
-        <a href="/pages/about.html">About</a>
-        <a href="/pages/privacy-policy.html">Privacy</a>
-        <a href="mailto:info@berlinerbengalis.com"
-          style="background: #DC143C; padding: 8px 16px; border-radius: 25px; color: white;">Contact</a>
+      <div class="bb-nav__links" id="bbNavLinks" role="list">
+        <a href="/" role="listitem">Home</a>
+        <a href="/pages/event.html" role="listitem">Event</a>
+        <a href="/pages/gallery.html" role="listitem">Gallery</a>
+        <a href="/pages/about.html" role="listitem">About</a>
       </div>
+      <button class="bb-nav__toggle" id="bbNavToggle" aria-label="Open menu" aria-expanded="false" aria-controls="bbNavLinks">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero" style="min-height: 400px;">
-    <div class="hero-content">
-      <div class="ornament">🔱 ✦ 🔱</div>
-      <h1 class="hero-title">Our Story</h1>
-      <!-- <p class="hero-description" style="font-size: 1.2rem;">Preserving Bengali Heritage in Berlin</p> -->
+  <header class="bb-hero" style="min-height:min(300px,40vh);" role="banner">
+    <div class="bb-hero__inner">
+      <p class="bb-hero__eyebrow">🌿 Our Story</p>
+      <h1 class="bb-hero__title" style="font-size:clamp(1.8rem,5vw,3rem);">About Us</h1>
+      <p class="bb-hero__sub">Preserving Bengali culture &amp; Hindu Sanatani traditions in the heart of Berlin</p>
     </div>
-  </section>
+  </header>
 
-  <!-- Main Content -->
-  <section class="section">
-    <div class="content-section">
-      <h2>Who We Are</h2>
-      <div class="divider"></div>
+  <main>
+    <div class="bb-page">
 
-      <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">
-        <strong>Berliner Bengalis e.V. (Berlin er Bengali)</strong> is a registered non-profit and non-commercial
-        association dedicated to preserving, celebrating, and promoting Bengali culture and Hindu Sanatani traditions in
-        the heart of Berlin.
-      </p>
+      <!-- Who We Are -->
+      <section class="bb-section" aria-labelledby="h-who">
+        <h2 class="bb-heading" id="h-who">Who We Are</h2>
+        <p>
+          <strong>Berliner Bengalis e.V.</strong> is a registered non-profit, non-commercial association
+          dedicated to preserving, celebrating and promoting Bengali culture and Hindu Sanatani traditions
+          in the heart of Berlin. Founded in 2023, we unite the Bengali community in Berlin while
+          enriching the city's multicultural landscape. For us, Berlin is not just a place of residence —
+          it is <em>"home away from home."</em>
+        </p>
+      </section>
 
-      <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">
-        Founded in <span class="highlight">2023</span>, we emerged from the vision of uniting the Bengali community in
-        Berlin while enriching the city's already vibrant multicultural landscape. For us, Berlin is not just a city of
-        residence—it is <span class="highlight">"home away from home,"</span> and we are committed to making this home
-        feel complete through our cultural expressions and traditions.
-      </p>
-    </div>
-  </section>
-
-  <!-- Mission & Vision -->
-  <section class="section alternate">
-    <div class="content-section">
-      <h2>Our Mission & Vision</h2>
-      <div class="divider"></div>
-
-      <div class="content-grid" style="margin-top: 2rem;">
-        <div class="card">
-          <div class="card-icon">🎯</div>
-          <div class="card-title">Our Mission</div>
-          <p style="color: #555; line-height: 1.8;">
-            To practice, preserve, and promote <span class="highlight">Hindu Sanatani culture</span> and Bengali
-            traditions through various cultural, religious, and social activities while fostering community spirit and
-            environmental consciousness.
-          </p>
+      <!-- Mission & Vision -->
+      <section class="bb-section" aria-labelledby="h-mission">
+        <h2 class="bb-heading" id="h-mission">Mission &amp; Vision</h2>
+        <div class="bb-grid" style="grid-template-columns:1fr 1fr;">
+          <div class="bb-card">
+            <h3>🎯 Our Mission</h3>
+            <p>To practice, preserve and promote Hindu Sanatani culture and Bengali traditions through cultural, religious and social activities, while fostering community spirit and environmental consciousness.</p>
+          </div>
+          <div class="bb-card">
+            <h3>🌟 Our Vision</h3>
+            <p>A thriving Bengali community in Berlin that celebrates its heritage with pride, maintains deep spiritual roots and contributes positively to the city's diverse cultural ecosystem.</p>
+          </div>
         </div>
+      </section>
 
-        <div class="card">
-          <div class="card-icon">✨</div>
-          <div class="card-title">Our Vision</div>
-          <p style="color: #555; line-height: 1.8;">
-            A thriving Bengali community in Berlin that celebrates its heritage with pride, maintains deep spiritual
-            roots, and contributes positively to the city's diverse cultural ecosystem while respecting and protecting
-            our natural environment.
-          </p>
+      <!-- Activities -->
+      <section class="bb-section" aria-labelledby="h-activities">
+        <h2 class="bb-heading" id="h-activities">What We Do</h2>
+        <div class="bb-mission">
+          <div class="bb-mission__item"><h3>🪔 Durga Puja</h3><p>Our flagship annual event with authentic pandal, rituals, cultural performances and community gatherings.</p></div>
+          <div class="bb-mission__item"><h3>🎭 Cultural Events</h3><p>Music, classical dance (Kathak, Bharatanatyam), theatre, poetry recitations, art exhibitions and workshops.</p></div>
+          <div class="bb-mission__item"><h3>🤝 Community</h3><p>Creating spaces for the Bengali community to connect, support each other and create lasting bonds.</p></div>
+          <div class="bb-mission__item"><h3>🍛 Food Culture</h3><p>Food festivals, cooking demonstrations and community meals celebrating authentic Bengali culinary traditions.</p></div>
+          <div class="bb-mission__item"><h3>📚 Education</h3><p>Workshops, language classes and cultural education to pass on Bengali heritage to younger generations.</p></div>
+          <div class="bb-mission__item"><h3>🌍 Environment</h3><p>Promoting eco-friendly practices, honouring the protection of Mother Earth per Sanatani traditions.</p></div>
         </div>
-      </div>
+      </section>
 
-      <div class="card" style="border-top: 5px solid var(--green); margin-top: 2rem;">
-        <div class="card-icon">🌍</div>
-        <div class="card-title">Core Values</div>
-        <ul style="color: #555; line-height: 2; list-style: none; padding: 0;">
-          <li>✦ <strong>Tradition:</strong> Honoring age-old Sanatani practices and Bengali customs</li>
-          <li>✦ <strong>Community:</strong> Building bonds of unity, support, and mutual respect</li>
-          <li>✦ <strong>Spirituality:</strong> Nurturing devotion to our divine heritage</li>
-          <li>✦ <strong>Sustainability:</strong> Protecting Mother Earth as per our traditions</li>
-          <li>✦ <strong>Inclusivity:</strong> Welcoming all who wish to celebrate our culture</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mid-page Ad Section -->
-  <div class="ad-inline">
-    <div class="ad-label">Advertisement</div>
-    <div class="ad-content">
-      <ins class="adsbygoogle ad-medium-rect" data-ad-client="ca-pub-7408218273710039"
-        data-ad-slot="about_midpage_300x250"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <!-- Ad Slot -->
+  <div class="bb-ad" aria-hidden="true">
+    <p class="bb-ad__label">Advertisement</p>
+    <div class="bb-ad__unit">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7408218273710039"
+        data-ad-slot="SLOT_ID_4"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
     </div>
   </div>
 
-  <!-- What We Do -->
-  <section class="section">
-    <div class="content-section">
-      <h2>What We Do</h2>
-      <div class="divider"></div>
-
-      <div class="events-grid" style="margin-top: 2rem;">
-        <div class="card">
-          <div class="card-icon">🎭</div>
-          <div class="card-title">Durga Puja Celebration</div>
-          <p style="color: #555;">
-            Our flagship event featuring authentic pandal installations, traditional rituals, cultural performances,
-            Bengali music, dance, and community gatherings celebrating the victory of good over evil.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">🎵</div>
-          <div class="card-title">Cultural Programs</div>
-          <p style="color: #555;">
-            Regular events showcasing Bengali music, classical dance (Kathak, Bharatanatyam), theater, poetry
-            recitations, art exhibitions, and workshops to keep our cultural heritage alive.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">👨‍👩‍👧‍👦</div>
-          <div class="card-title">Community Building</div>
-          <p style="color: #555;">
-            Creating spaces for the Bengali community to connect, support each other, share experiences, and create
-            lasting bonds in a welcoming and inclusive environment.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">🍛</div>
-          <div class="card-title">Cultural Cuisine</div>
-          <p style="color: #555;">
-            Celebrating Bengali culinary traditions through food festivals, cooking demonstrations, and community meals
-            that bring people together through authentic flavors.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">📚</div>
-          <div class="card-title">Youth Engagement</div>
-          <p style="color: #555;">
-            Organizing workshops, language classes, and cultural education programs to pass on traditions to younger
-            generations and keep Bengali heritage alive.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">🌱</div>
-          <div class="card-title">Environmental Stewardship</div>
-          <p style="color: #555;">
-            Promoting eco-friendly practices and environmental consciousness, honoring the protection of "Mother Earth"
-            according to our Sanatani traditions.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Durga Puja Significance -->
-  <section class="section alternate">
-    <div class="content-section">
-      <h2>Understanding Durga Puja</h2>
-      <div class="divider"></div>
-
-      <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin: 2rem 0;">
-        Durga Puja is one of the most significant festivals in the Hindu Sanatani calendar, celebrated primarily by
-        Bengali and Assamese communities, though observed by Hindus across India and the world.
-      </p>
-
-      <div class="content-grid">
-        <div>
-          <h3 style="color: var(--saffron);">Goddess Durga</h3>
-          <p style="color: #555; line-height: 1.8;">
-            Goddess Durga (also known as Devi or Shakti) embodies supreme divine feminine energy—courage, strength,
-            compassion, and protection. She represents the triumph of good over evil, righteousness over injustice, and
-            light over darkness. Her ten arms symbolize her infinite power to protect her devotees and vanquish
-            negativity.
-          </p>
-        </div>
-
-        <div>
-          <h3 style="color: var(--green-dark);">The Legend</h3>
-          <p style="color: #555; line-height: 1.8;">
-            According to mythology, Goddess Durga was created to defeat the buffalo demon Mahishasura, who could not be
-            slain by any male god. The nine-day festival celebrates her victorious battle culminating in Vijayadashami
-            (Victory Day), symbolizing the eternal victory of virtue over vice.
-          </p>
-        </div>
-      </div>
-
-      <div
-        style="background: var(--cream); padding: 2rem; border-radius: 15px; border-left: 5px solid var(--saffron); margin-top: 2rem;">
-        <h3 style="color: var(--saffron); margin-top: 0;">The Nine Days (Navaratri)</h3>
-        <ul style="color: #555; line-height: 2; list-style-position: inside;">
-          <li><strong>Day 1 - Ghatasthapana/Mahalaya:</strong> Invocation and ritual awakening of the Goddess</li>
-          <li><strong>Day 2 - Shashti:</strong> Pandal opening, first darshan, worship of Maa Kalratri</li>
-          <li><strong>Day 3 - Saptami:</strong> Durga Saptami, major rituals, Kshatri Puja begins</li>
-          <li><strong>Day 4 - Ashtami:</strong> Kumari Puja (worshipping young girls), Sandhi Puja</li>
-          <li><strong>Day 5 - Navami:</strong> Maha Navami, continued celebrations, cultural programs</li>
-          <li><strong>Day 6 - Dashami (Vijayadashami):</strong> Victory Day, Sindur Khela, Bijaya, conclusion of
-            festivities</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Timeline of Celebrations -->
-  <section class="section">
-    <div class="content-section">
-      <h2>Our Celebration Timeline</h2>
-      <div class="divider"></div>
-
-      <div style="margin-top: 2rem;">
-        <div class="card" style="border-left: 5px solid var(--saffron);">
-          <h3 style="color: var(--saffron); margin-top: 0;">Durga Puja 2025</h3>
-          <p><strong>📅 Dates:</strong> 27th September – 3rd October, 2025</p>
-          <p><strong>📍 Location:</strong> Zwölf-Apostel-Kirchengemeinde, An d. Apostelkirche 1, 10783 Berlin</p>
-          <p style="color: #666;">Join us for our grand celebration with traditional pandal, daily rituals, cultural
-            programs, Bengali cuisine, music, dance, and community festivities. Special highlight: Bijaya Sammilani on
-            October 3rd after Sindur Khela!</p>
-        </div>
-
-        <div class="card" style="border-left: 5px solid var(--green);">
-          <h3 style="color: var(--green-dark); margin-top: 0;">Durga Puja 2024</h3>
-          <p><strong>📅 Dates:</strong> 8th – 12th October, 2024</p>
-          <p><strong>📍 Location:</strong> Zwölf-Apostel-Kirchengemeinde, Berlin</p>
-          <p style="color: #666;">Our second annual celebration brought the Bengali community together with spectacular
-            pandal decorations, authentic rituals, and vibrant cultural programs.</p>
-        </div>
-
-        <div class="card" style="border-left: 5px solid var(--burgundy);">
-          <h3 style="color: var(--burgundy); margin-top: 0;">Durga Puja 2023</h3>
-          <p><strong>📅 Dates:</strong> 20th – 24th October, 2023</p>
-          <p><strong>📍 Location:</strong> Radha Govinda Temple, Berlin</p>
-          <p style="color: #666;"><strong>Theme:</strong> "Save the Nature" 🌍<br>Our inaugural celebration with the
-            environmental conservation theme, symbolizing our commitment to protecting Mother Earth as per Sanatani
-            traditions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Join Us Section -->
-  <section class="section alternate">
-    <div class="content-section">
-      <h2>Join Our Community</h2>
-      <div class="divider" style="margin-left: auto; margin-right: auto;"></div>
-
-      <p
-        style="text-align: center; font-size: 1.1rem; color: #555; margin: 2rem 0; margin-left: auto; margin-right: auto;">
-        Whether you are a Bengali, a friend of Bengali culture, or simply someone interested in experiencing authentic
-        cultural celebrations, we warmly welcome you to join Berliner Bengalis e.V.
-      </p>
-
-      <div style="margin: 3rem 0;">
-        <p style="text-align: center; margin: 1rem 0;">
-          <strong>📧 Get In Touch:</strong> <a href="mailto:info@berlinerbengalis.com"
-            style="color: var(--saffron); font-weight: 700; text-decoration: none;">info@berlinerbengalis.com</a>
+      <!-- About Durga Puja -->
+      <section class="bb-section" aria-labelledby="h-dp">
+        <h2 class="bb-heading" id="h-dp">About Durga Puja</h2>
+        <p>
+          Durga Puja is one of the most significant festivals in the Hindu Sanatani calendar, celebrated
+          primarily by Bengali and Assamese communities. Goddess Durga embodies supreme divine feminine
+          energy — courage, strength, compassion and protection. She represents the triumph of good over
+          evil, righteousness over injustice, and light over darkness.
         </p>
-        <p style="text-align: center; margin: 1rem 0;">
-          <strong>📱 Follow Us:</strong>
+        <p style="margin-top:1rem;">
+          According to mythology, Goddess Durga was created to defeat the buffalo demon Mahishasura.
+          The nine-day festival culminates in <strong>Vijayadashami (Victory Day)</strong> — the eternal
+          victory of virtue over vice.
         </p>
-        <div class="social-icons" style="margin: 1.5rem 0;">
-          <a href="https://www.facebook.com/profile.php?id=61578774629835" target="_blank" title="Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
+      </section>
+
+      <!-- Past Celebrations -->
+      <section class="bb-section" aria-labelledby="h-past">
+        <h2 class="bb-heading" id="h-past">Our Celebrations</h2>
+        <div class="bb-timeline">
+          <div class="bb-tl-item">
+            <div class="bb-tl-date">2025<span>3rd</span>Edition</div>
+            <div class="bb-tl-body">
+              <h3>Durga Puja 2025</h3>
+              <p>📅 27 Sep – 3 Oct 2025 &nbsp;·&nbsp; 📍 Zwölf-Apostel-Kirchengemeinde, 10783 Berlin</p>
+              <p>Our grandest celebration yet — traditional pandal, daily rituals, cultural programmes, Bengali cuisine, music and dance. Special highlight: Bijaya Sammilani on 3 October after Sindur Khela!</p>
+            </div>
+          </div>
+          <div class="bb-tl-item">
+            <div class="bb-tl-date">2024<span>2nd</span>Edition</div>
+            <div class="bb-tl-body">
+              <h3>Durga Puja 2024</h3>
+              <p>📅 8–12 October 2024 &nbsp;·&nbsp; 📍 Zwölf-Apostel-Kirchengemeinde, Berlin</p>
+              <p>Our second annual celebration brought the Bengali community together with spectacular pandal decorations, authentic rituals and vibrant cultural programmes.</p>
+            </div>
+          </div>
+          <div class="bb-tl-item">
+            <div class="bb-tl-date">2023<span>1st</span>Edition</div>
+            <div class="bb-tl-body">
+              <h3>Durga Puja 2023 — "Save the Nature" 🌍</h3>
+              <p>📅 20–24 October 2023 &nbsp;·&nbsp; 📍 Radha Govinda Temple, Berlin</p>
+              <p>Our inaugural celebration with an environmental conservation theme, symbolising our commitment to protecting Mother Earth as per Sanatani traditions.</p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <p style="text-align: center; margin-top: 2rem;">
-        <a href="../index.html#events" class="cta-button" style="text-decoration: none;">Explore Events</a>
-      </p>
-    </div>
-  </section>
+      <!-- Join Us -->
+      <section class="bb-section" aria-labelledby="h-join">
+        <h2 class="bb-heading" id="h-join">Join Us</h2>
+        <p>Whether you are Bengali, a friend of Bengali culture, or simply curious about our traditions — you are warmly welcome.</p>
+        <div class="bb-grid" style="margin-top:1.25rem;">
+          <div class="bb-card"><h3>📧 Get In Touch</h3><p><a href="mailto:info@berlinerbengalis.com">info@berlinerbengalis.com</a></p></div>
+          <div class="bb-card"><h3>📱 Follow Us</h3><p>Stay updated on Facebook, Instagram and YouTube for upcoming events.</p></div>
+        </div>
+      </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>🔱 Berliner Bengalis e.V.</h4>
-        <p>Preserving Bengali culture and celebrating Durga Puja in the heart of Berlin.</p>
-        <p><strong>Est. 2023</strong></p>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <p><a href="/index.html">Home</a></p>
-        <p><a href="/pages/event.html">Events</a></p>
-        <p><a href="/pages/gallery.html">Gallery</a></p>
-        <p><a href="/pages/about.html">About</a></p>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <p><strong>Email:</strong><br><a href="mailto:info@berlinerbengalis.com">info@berlinerbengalis.com</a></p>
-        <p><strong>Location:</strong><br>Berlin, Germany</p>
-      </div>
     </div>
-    <div class="footer-bottom">
-      <p style="margin: 0; padding: 1rem 0;">🔱 © 2023-2025 Berliner Bengalis e.V. | All Rights Reserved 🔱</p>
-      <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Celebrating Culture • Honoring Traditions • Building
-        Community</p>
-    </div>
+  </main>
 
-    <!-- Footer Ad Section -->
-    <div class="ad-footer">
-      <div class="ad-label">Advertisement</div>
-      <div class="ad-content">
-        <ins class="adsbygoogle ad-leaderboard" data-ad-client="ca-pub-7408218273710039"
-          data-ad-slot="about_footer_728x90"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <footer class="bb-footer" role="contentinfo">
+    <div class="bb-footer__inner">
+      <p class="bb-footer__brand">Berliner Bengalis e.V.</p>
+      <nav class="bb-footer__links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/pages/event.html">Event</a>
+        <a href="/pages/gallery.html">Gallery</a>
+        <a href="/pages/about.html">About</a>
+        <a href="/pages/privacy-policy.html">Privacy Policy</a>
+        <button class="bb-footer__cookie-btn" onclick="BBShowConsentModal()" type="button">Cookie Settings</button>
+      </nav>
+      <div class="bb-footer__social">
+        <a href="https://www.facebook.com/berlinerbengalis" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/berlinerbengalis" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@berlinerbengalis" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+        </a>
       </div>
+      <p class="bb-footer__copy">© 2025 Berliner Bengalis e.V. &nbsp;·&nbsp; <a href="mailto:info@berlinerbengalis.com">info@berlinerbengalis.com</a></p>
     </div>
   </footer>
-
-  <script>
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-  </script>
-
-  <!-- Include shared CMP module as fallback -->
-  <script src="../js/cmp.js"></script>
-  <!-- Include navbar toggle script -->
-  <script src="../js/navbar.js"></script>
+  <!-- ── CONSENT BANNER ── -->
+  <div id="bbCmpBanner" class="bb-cmp" role="dialog" aria-live="polite" aria-label="Cookie consent" style="display:none;">
+    <div class="bb-cmp__inner">
+      <div class="bb-cmp__text">
+        <strong>🍪 Cookies &amp; Privacy</strong>
+        <p>We use essential cookies to run this site. With your consent we also use analytics and advertising cookies. <a href="/pages/privacy-policy.html">Privacy Policy</a></p>
+      </div>
+      <div class="bb-cmp__actions">
+        <button id="bbCmpReject"  class="bb-cmp__btn bb-cmp__btn--reject"  type="button">Reject All</button>
+        <button id="bbCmpCustomize"  class="bb-cmp__btn bb-cmp__btn--manage"  type="button">Customize</button>
+        <button id="bbCmpAccept"  class="bb-cmp__btn bb-cmp__btn--accept"  type="button">Accept All</button>
+      </div>
+    </div>
+  </div>
+  <!-- ── CONSENT MODAL ── -->
+  <div id="bbCmpOverlay" class="bb-cmp-overlay" aria-hidden="true"></div>
+  <div id="bbCmpModal"   class="bb-cmp-modal" role="dialog" aria-modal="true" aria-labelledby="bbCmpModalTitle" style="display:none;">
+    <div class="bb-cmp-modal__head">
+      <h2 id="bbCmpModalTitle">Cookie Preferences</h2>
+      <button id="bbCmpCancel" class="bb-cmp-modal__close" type="button" aria-label="Close">✕</button>
+    </div>
+    <div class="bb-cmp-modal__body">
+      <div class="bb-cmp-pref">
+        <div class="bb-cmp-pref__row">
+          <div><strong>Essential</strong><p>Required for the site to work. Always active.</p></div>
+          <button class="bb-cmp-toggle" data-active="true" disabled aria-pressed="true" aria-label="Essential always on"></button>
+        </div>
+      </div>
+      <div class="bb-cmp-pref">
+        <div class="bb-cmp-pref__row">
+          <div><strong>Analytics</strong><p>Help us improve with Google Analytics. Completely anonymized.</p></div>
+          <button id="bbCmpToggleAnalytics" class="bb-cmp-toggle" type="button" data-active="false" aria-pressed="false" aria-label="Toggle analytics cookies"></button>
+        </div>
+      </div>
+      <div class="bb-cmp-pref">
+        <div class="bb-cmp-pref__row">
+          <div><strong>Advertising</strong><p>Enables relevant ads from Google AdSense. No ads if declined.</p></div>
+          <button id="bbCmpToggleMarketing" class="bb-cmp-toggle" type="button" data-active="false" aria-pressed="false" aria-label="Toggle advertising cookies"></button>
+        </div>
+      </div>
+      <div class="bb-cmp-pref">
+        <div class="bb-cmp-pref__row">
+          <div><strong>Functional</strong><p>Store your preferences and settings.</p></div>
+          <button id="bbCmpToggleFunctional" class="bb-cmp-toggle" type="button" data-active="false" aria-pressed="false" aria-label="Toggle functional cookies"></button>
+        </div>
+      </div>
+    </div>
+    <div class="bb-cmp-modal__foot">
+      <button id="bbCmpSave" class="bb-cmp__btn bb-cmp__btn--accept" type="button">Save Preferences</button>
+    </div>
+  </div>
+  <script src="/js/klaro-config.js"></script>
+  <script src="/js/cmp.js"></script>
+  <script src="/js/navbar.js"></script>
 </body>
-
 </html>
