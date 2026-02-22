@@ -88,28 +88,6 @@ h1,h2,h3{font-family:var(--font-head);line-height:1.25}
 }
 
 /* ── CONSENT MODAL ── */
-.bb-cmp-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9998;opacity:0;pointer-events:none;transition:opacity .25s}
-.bb-cmp-overlay.open{opacity:1;pointer-events:all}
-.bb-cmp-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;color:var(--dark);border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.25);z-index:10000;width:min(480px,94vw);max-height:85vh;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;transform:translate(-50%,-48%)}
-.bb-cmp-modal.open{opacity:1;pointer-events:all;transform:translate(-50%,-50%)}
-.bb-cmp-modal.hidden{display:none}
-.bb-cmp-modal__head{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 1.5rem 1rem;border-bottom:1px solid #eee}
-.bb-cmp-modal__head h2{font-size:1.15rem;color:var(--dark)}
-.bb-cmp-modal__close{background:none;border:none;font-size:1.2rem;cursor:pointer;color:#999;line-height:1;padding:.2rem .4rem;border-radius:4px}
-.bb-cmp-modal__close:hover{background:#f0f0f0;color:var(--dark)}
-.bb-cmp-modal__body{padding:1.5rem}
-.bb-cmp-pref{margin-bottom:1.25rem}
-.bb-cmp-pref:last-child{margin-bottom:0}
-.bb-cmp-pref__row{display:flex;align-items:flex-start;gap:1rem;justify-content:space-between}
-.bb-cmp-pref__row strong{display:block;font-size:.95rem;margin-bottom:.25rem}
-.bb-cmp-pref__row p{font-size:.82rem;color:#777;margin:0}
-.bb-cmp-toggle{width:46px;height:26px;border-radius:13px;background:#ccc;border:none;cursor:pointer;position:relative;flex-shrink:0;transition:background .25s}
-.bb-cmp-toggle::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:left .25s;box-shadow:0 1px 4px rgba(0,0,0,.2)}
-.bb-cmp-toggle--on,.bb-cmp-toggle[aria-pressed="true"]{background:var(--saffron)}
-.bb-cmp-toggle--on::after,.bb-cmp-toggle[aria-pressed="true"]::after{left:23px}
-.bb-cmp-toggle--locked{cursor:not-allowed;opacity:.6}
-.bb-cmp-modal__foot{padding:1rem 1.5rem 1.5rem;border-top:1px solid #eee;display:flex;justify-content:flex-end}
-
 /* ── PAGE SHELL ── */
 .bb-page{max-width:var(--max);margin:0 auto;padding:3rem 1.25rem}
 @media(max-width:600px){.bb-page{padding:2rem .9rem}}
@@ -249,7 +227,7 @@ details.bb-faq__item .bb-faq__ans{padding:.25rem 1.1rem 1rem;font-size:.88rem;co
       <!-- Who We Are -->
       <section class="bb-section" aria-labelledby="h-who">
         <h2 class="bb-heading" id="h-who">Who We Are</h2>
-        <p class="bb-lead">
+        <p>
           <strong>Berliner Bengalis e.V.</strong> is a registered non-profit, non-commercial association
           dedicated to preserving, celebrating and promoting Bengali culture and Hindu Sanatani traditions
           in the heart of Berlin. Founded in 2023, we unite the Bengali community in Berlin while
@@ -292,7 +270,7 @@ details.bb-faq__item .bb-faq__ans{padding:.25rem 1.1rem 1rem;font-size:.88rem;co
     <div class="bb-ad__unit">
       <ins class="adsbygoogle"
         style="display:block"
-        data-ad-client="ca-pub-REPLACE_WITH_YOUR_PUB_ID"
+        data-ad-client="ca-pub-7408218273710039"
         data-ad-slot="SLOT_ID_4"
         data-ad-format="auto"
         data-full-width-responsive="true"></ins>
@@ -302,13 +280,13 @@ details.bb-faq__item .bb-faq__ans{padding:.25rem 1.1rem 1rem;font-size:.88rem;co
       <!-- About Durga Puja -->
       <section class="bb-section" aria-labelledby="h-dp">
         <h2 class="bb-heading" id="h-dp">About Durga Puja</h2>
-        <p class="bb-lead">
+        <p>
           Durga Puja is one of the most significant festivals in the Hindu Sanatani calendar, celebrated
           primarily by Bengali and Assamese communities. Goddess Durga embodies supreme divine feminine
           energy — courage, strength, compassion and protection. She represents the triumph of good over
           evil, righteousness over injustice, and light over darkness.
         </p>
-        <p class="bb-lead" style="margin-top:1rem;">
+        <p style="margin-top:1rem;">
           According to mythology, Goddess Durga was created to defeat the buffalo demon Mahishasura.
           The nine-day festival culminates in <strong>Vijayadashami (Victory Day)</strong> — the eternal
           victory of virtue over vice.
@@ -349,7 +327,7 @@ details.bb-faq__item .bb-faq__ans{padding:.25rem 1.1rem 1rem;font-size:.88rem;co
       <!-- Join Us -->
       <section class="bb-section" aria-labelledby="h-join">
         <h2 class="bb-heading" id="h-join">Join Us</h2>
-        <p class="bb-lead">Whether you are Bengali, a friend of Bengali culture, or simply curious about our traditions — you are warmly welcome.</p>
+        <p>Whether you are Bengali, a friend of Bengali culture, or simply curious about our traditions — you are warmly welcome.</p>
         <div class="bb-grid" style="margin-top:1.25rem;">
           <div class="bb-card"><h3>📧 Get In Touch</h3><p><a href="mailto:info@berlinerbengalis.com">info@berlinerbengalis.com</a></p></div>
           <div class="bb-card"><h3>📱 Follow Us</h3><p>Stay updated on Facebook, Instagram and YouTube for upcoming events.</p></div>

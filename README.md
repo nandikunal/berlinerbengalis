@@ -40,7 +40,7 @@ A responsive website for Berliner Bengalis e.V., a Bengali cultural association 
 
 To deploy: Push to main branch. The site is static HTML/CSS/JS with no build process required.
 
-For AdSense setup, replace `ca-pub-REPLACE_WITH_YOUR_PUB_ID` with your publisher ID and update slot IDs.
+For AdSense setup, replace `ca-pub-7408218273710039` with your publisher ID and update slot IDs.
 
 ## License
 
