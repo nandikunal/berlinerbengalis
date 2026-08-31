@@ -1,11 +1,11 @@
 # Berliner Bengalis e.V. – Website
 
-A responsive website for Berliner Bengalis e.V., a Bengali cultural association in Berlin celebrating Durga Puja 2025 and Hindu Sanatani traditions.
+A responsive website for Berliner Bengalis e.V., a Bengali cultural association in Berlin celebrating Durga Puja 2026 and Hindu Sanatani traditions.
 
 ## Features
 
 - **4 Responsive Pages**: Home, Event Schedule, Gallery, About
-- **Bengali Cultural Theme**: Authentic design with Durga Puja 2025 focus
+- **Bengali Cultural Theme**: Authentic design with Durga Puja 2026 focus
 - **GDPR Compliant**: Privacy policy and consent management system
 - **Google AdSense Integration**: Revenue-ready ad slots
 - **Mobile Optimized**: Works seamlessly on all devices
@@ -13,8 +13,6 @@ A responsive website for Berliner Bengalis e.V., a Bengali cultural association 
 
 ## Quick Links
 
-- **Event Dates**: 27 September – 3 October 2025
-- **Venue**: Zwölf-Apostel-Kirchengemeinde, Berlin
 - **Contact**: info@berlinerbengalis.com
 
 ## Structure
@@ -44,4 +42,4 @@ For AdSense setup, replace `ca-pub-7408218273710039` with your publisher ID and 
 
 ## License
 
-© 2025 Berliner Bengalis e.V. Licensed under MIT.
+© 2026 Berliner Bengalis e.V. Licensed under MIT.
