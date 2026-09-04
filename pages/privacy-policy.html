@@ -82,8 +82,8 @@
       This is used solely to respond to your enquiry and deleted once no longer needed.</p>
 
       <h2>4. Consent Management</h2>
-      <p>We manage cookie consent through a custom CMP. Your choices are stored in the cookie
-      <code>bb_consent</code> for up to 365 days so you are not asked again on every visit.</p>
+      <p>We manage consent through a custom CMP. Your choices are stored in your browser local storage as
+      <code>bb_consent_prefs</code> (for up to 365 days) so you are not asked again on every visit.</p>
       <p>You can review or withdraw consent any time via the
         <button class="bb-footer__cookie-btn" onclick="BBShowConsentModal()" type="button" style="font-size:.92rem;">Cookie Settings</button>
       link in the footer, or by clearing your browser cookies.</p>
@@ -91,7 +91,7 @@
       <table>
         <thead><tr><th>Cookie name</th><th>Purpose</th><th>Type</th><th>Duration</th></tr></thead>
         <tbody>
-          <tr><td>bb_consent</td><td>Stores your cookie consent preferences</td><td>Essential</td><td>365 days</td></tr>
+          <tr><td>bb_consent_prefs (local storage)</td><td>Stores your consent preferences</td><td>Essential</td><td>365 days</td></tr>
           <tr><td>__gads, __gpi, _gcl_*</td><td>Google AdSense – ad delivery (only after consent)</td><td>Marketing</td><td>Up to 13 months</td></tr>
         </tbody>
       </table>
