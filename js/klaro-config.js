@@ -62,7 +62,7 @@ window.klaroConfig = {
       required: false,
       optOut: false,
       onlyOnce: false,
-      description: 'Advertising cookies for personalised ads. Only loads after consent.'
+      description: 'Controls personalized ads. If declined, non-personalized ads may still be shown.'
     }
   ]
 };
