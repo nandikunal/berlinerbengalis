@@ -25,15 +25,39 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://berlinerbengalis.com/pages/gallery.html</loc>
-        <lastmod>2026-09-04</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://berlinerbengalis.com/pages/privacy-policy.html</loc>
         <lastmod>2026-09-04</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://berlinerbengalis.com/amp/</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://berlinerbengalis.com/amp/pages/event.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://berlinerbengalis.com/amp/pages/news.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://berlinerbengalis.com/amp/pages/about.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://berlinerbengalis.com/amp/pages/privacy-policy.html</loc>
+        <lastmod>2026-09-04</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
 </urlset>

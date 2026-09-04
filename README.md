@@ -4,7 +4,7 @@ A responsive website for Berliner Bengalis e.V., a Bengali cultural association 
 
 ## Features
 
-- **4 Responsive Pages**: Home, Event Schedule, Gallery, About
+- **4 Responsive Pages**: Home, Event Schedule, About
 - **Bengali Cultural Theme**: Authentic design with Durga Puja 2026 focus
 - **GDPR Compliant**: Privacy policy and consent management system
 - **Google AdSense Integration**: Revenue-ready ad slots
@@ -21,12 +21,13 @@ A responsive website for Berliner Bengalis e.V., a Bengali cultural association 
 ├── index.html              # Homepage
 ├── pages/                  # Additional pages
 │   ├── event.html
-│   ├── gallery.html
+|   |── news.html
 │   ├── about.html
 │   └── privacy-policy.html
 ├── template/               # Stylesheets
 │   ├── bengali-theme.css
 │   └── ads.css
+│   └── site.css
 ├── js/                     # JavaScript
 │   ├── cmp.js              # Consent management
 │   ├── navbar.js           # Mobile navigation
