@@ -1,4 +1,4 @@
-AdSense Review — Berliner Bengalis e.V.
+AdSense Review - Berliner Bengalis e.V.
 
 Summary of changes made prior to requesting review:
 
@@ -12,8 +12,8 @@ Summary of changes made prior to requesting review:
 How to reproduce (what I tested):
 
 1. Visit the site on a fresh browser (no existing `bb_consent_prefs`). The cookie banner appears and no AdSense script is loaded.
-2. Click **Reject All** — AdSense script must NOT load; user preferences recorded as marketing: false.
-3. Clear cookies/localStorage, reload, click **Accept All** — AdSense script should load and ad units should render.
+2. Click **Reject All** - AdSense script must NOT load; user preferences recorded as marketing: false.
+3. Clear cookies/localStorage, reload, click **Accept All** - AdSense script should load and ad units should render.
 
 Files changed:
 - `js/cmp.js`

@@ -57,36 +57,35 @@
     gtag('config', GA_ID, { anonymize_ip: true });
   }
 
-  /* ── Load AdSense (consent-gated) ── */
-  function loadAdSense() {
+  /* ── Load AdSense (always after consent choice; can be non-personalized) ── */
+  function loadAdSense(nonPersonalized) {
     var ADSENSE_CLIENT = 'ca-pub-7408218273710039';
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.adsbygoogle.requestNonPersonalizedAds = nonPersonalized ? 1 : 0;
+
+    function renderAdUnits() {
+      try {
+        document.querySelectorAll('.adsbygoogle').forEach(function (el) {
+          if (!el.dataset.adsbygoogleStatus) {
+            try { window.adsbygoogle.push({}); el.dataset.adsbygoogleStatus = 'rendered'; } catch (e) {}
+          }
+        });
+      } catch (e) { console.warn('[CMP] AdSense render error', e); }
+    }
+
     // If AdSense script is not yet present, insert it with the publisher client id
     if (!document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
       var s = document.createElement('script');
       s.async = true;
       s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_CLIENT;
       s.crossOrigin = 'anonymous';
-      s.onload = function () {
-        try {
-          document.querySelectorAll('.adsbygoogle').forEach(function (el) {
-            if (!el.dataset.adsbygoogleStatus) {
-              try { (window.adsbygoogle = window.adsbygoogle || []).push({}); el.dataset.adsbygoogleStatus = 'rendered'; } catch (e) {}
-            }
-          });
-        } catch (e) { console.warn('[CMP] AdSense render error', e); }
-      };
+      s.onload = renderAdUnits;
       document.head.appendChild(s);
       return;
     }
 
     // If script already loaded, trigger ad units to render
-    if (window.adsbygoogle) {
-      document.querySelectorAll('.adsbygoogle').forEach(function (el) {
-        if (!el.dataset.adsbygoogleStatus) {
-          try { (window.adsbygoogle = window.adsbygoogle || []).push({}); el.dataset.adsbygoogleStatus = 'rendered'; } catch (e) {}
-        }
-      });
-    }
+    renderAdUnits();
   }
 
   /* ── Apply consent ── */
@@ -94,7 +93,8 @@
     saveConsent(prefs);
     pushConsentMode(prefs);
     if (prefs.analytics) loadGA();
-    if (prefs.marketing) loadAdSense();
+    // Show ads after consent choice; personalize only when marketing is granted.
+    loadAdSense(!prefs.marketing);
   }
 
   /* ── Banner UI ── */
