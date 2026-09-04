@@ -59,10 +59,31 @@
 
   /* ── Load AdSense (consent-gated) ── */
   function loadAdSense() {
+    var ADSENSE_CLIENT = 'ca-pub-7408218273710039';
+    // If AdSense script is not yet present, insert it with the publisher client id
+    if (!document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_CLIENT;
+      s.crossOrigin = 'anonymous';
+      s.onload = function () {
+        try {
+          document.querySelectorAll('.adsbygoogle').forEach(function (el) {
+            if (!el.dataset.adsbygoogleStatus) {
+              try { (window.adsbygoogle = window.adsbygoogle || []).push({}); el.dataset.adsbygoogleStatus = 'rendered'; } catch (e) {}
+            }
+          });
+        } catch (e) { console.warn('[CMP] AdSense render error', e); }
+      };
+      document.head.appendChild(s);
+      return;
+    }
+
+    // If script already loaded, trigger ad units to render
     if (window.adsbygoogle) {
       document.querySelectorAll('.adsbygoogle').forEach(function (el) {
         if (!el.dataset.adsbygoogleStatus) {
-          try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+          try { (window.adsbygoogle = window.adsbygoogle || []).push({}); el.dataset.adsbygoogleStatus = 'rendered'; } catch (e) {}
         }
       });
     }
