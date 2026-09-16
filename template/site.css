@@ -697,38 +697,6 @@ h3 {
   color: #fff
 }
 
-/* ── AD SLOTS ── */
-.bb-ad {
-  text-align: center;
-  margin: 2rem auto;
-  max-width: var(--max);
-  padding: 0 1.25rem
-}
-
-.bb-ad__label {
-  font-size: .68rem;
-  color: #bbb;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: .3rem
-}
-
-.bb-ad__unit {
-  background: #fff;
-  border-radius: 8px;
-  padding: .75rem;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, .06);
-  min-height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center
-}
-
-.bb-ad__unit ins {
-  display: block;
-  width: 100%
-}
-
 /* ── TIMELINE (event page) ── */
 .bb-timeline {
   margin-top: 1.5rem
@@ -840,20 +808,6 @@ details.bb-faq__item .bb-faq__ans {
   line-height: 1.7
 }
 
-/* ── GALLERY ── */
-.bb-gallery-note {
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 2rem;
-  text-align: center;
-  box-shadow: var(--shadow);
-  color: var(--mid)
-}
-
-.bb-gallery-note h3 {
-  color: var(--saffron-d);
-  margin-bottom: .5rem
-}
 
 /* ── ABOUT MISSION ── */
 .bb-mission {
