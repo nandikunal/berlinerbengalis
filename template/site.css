@@ -735,6 +735,45 @@ h3 {
   box-shadow: var(--shadow)
 }
 
+.bb-tl-invite {
+  display: block;
+  margin: 0 0 .9rem
+}
+
+.bb-tl-invite img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .15)
+}
+
+@media (min-width: 768px) {
+  .bb-tl-body {
+    display: grid;
+    grid-template-columns: minmax(180px, 260px) 1fr;
+    gap: 1.25rem;
+    align-items: start
+  }
+
+  .bb-tl-invite {
+    margin: 0;
+    grid-row: 1 / span 3
+  }
+
+  .bb-tl-body>*:not(.bb-tl-invite) {
+    grid-column: 2
+  }
+}
+
+@media (max-width: 520px) {
+  .bb-tl-item {
+    grid-template-columns: 1fr
+  }
+}
+
 .bb-tl-body h3 {
   font-size: 1rem;
   color: var(--red);
